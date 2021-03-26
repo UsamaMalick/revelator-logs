@@ -1,0 +1,1329 @@
+(statement:44) DEBUG:@__init__:🌅 INIT StatementManager
+(datamanager:36) DEBUG:@__init__:🌅 INIT DataManager
+(datamanager:39) DEBUG:@__init__:connecting to db
+(notification:23) DEBUG:@__init__:🌅 INIT NotificationManager
+(log:75) DEBUG:@wrap:🌺  ❮_ 'get_pending_queues' Started
+(datamanager:614) DEBUG:@get_pending_queues:💽  Getting list of pending queues
+   UserStatementQueueId
+0           860        
+1           861        
+(log:82) DEBUG:@wrap:_❯ 🌺   'get_pending_queues' Ended 🐘  tot. mem.: 60 MB  𝞓: 0 MB ⏱  0.011s
+💽 Pending queues are :    UserStatementQueueId
+0           860        
+1           861        
+(log:75) DEBUG:@wrap:🍂  ❮_ 'generate_statements' Started
+(statement:908) DEBUG:@generate_statements:<bll.statement.StatementManager object at 0x7f8f1bd24b20>
+(statement:937) DEBUG:@generate_statements:matching queue 860
+(log:75) DEBUG:@wrap:🌳  ❮_❮_ 'get_status' Started
+(datamanager:360) DEBUG:@get_status:get_status for 860
+(log:82) DEBUG:@wrap:_❯_❯ 🌳   'get_status' Ended 🐘  tot. mem.: 60 MB  𝞓: 0 MB ⏱  0.001s
+(datamanager:170) DEBUG:@_set_queue_status:_set_queue_status: Queue_id : 860, Status : IN_PROGRESS, None
+(datamanager:183) DEBUG:@_set_queue_status:SQL : update UserStatementsQueue set status=2100,LastUpdateDate=getdate() where UserStatementQueueId=860
+(datamanager:543) DEBUG:@rerun_batch:rerun_batch
+(log:75) DEBUG:@wrap:🌻  ❮_❮_ 'match_statements' Started
+(statement:662) DEBUG:@match_statements:>> match_statements: 860
+(statement:672) DEBUG:@match_statements:matching queue 860
+(log:75) DEBUG:@wrap:🌼  ❮_❮_❮_ 'set_queue_id' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🌼   'set_queue_id' Ended 🐘  tot. mem.: 60 MB  𝞓: 0 MB ⏱  0.000s
+(datamanager:1013) DEBUG:@get_statement_info:get_statement_info: 860
+(contract:37) DEBUG:@__init__:🌅 INIT ContractManager
+(log:75) DEBUG:@wrap:🌴  ❮_❮_❮_ 'get_calculated_payees' Started
+(billing:45) DEBUG:@get_calculated_payees:>>>get_calculated_payees: 860, 151685
+(log:75) DEBUG:@wrap:🍁  ❮_❮_❮_❮_ 'get_sales_contracts' Started
+(contract:715) DEBUG:@get_sales_contracts:>>>> get_sales_contracts: 860, 151685
+(log:75) DEBUG:@wrap:🌶  ❮_❮_❮_❮_❮_ 'get_track_release_sales' Started
+(catalog:38) DEBUG:@get_track_release_sales:get_track_release_sales: 860
+(log:75) DEBUG:@wrap:🌻  ❮_❮_❮_❮_❮_❮_ 'get_sale_items' Started
+(datamanager:295) DEBUG:@get_sale_items:get_sale_items: 860
+(log:75) DEBUG:@wrap:🌼  ❮_❮_❮_❮_❮_❮_❮_ '_store_rows' Started
+(datamanager:88) DEBUG:@_store_rows:_store_rows: /home/revelator/statement-engine/log/cache/matcher/sale_items_all_approved_860.csv
+(datamanager:119) DEBUG:@_store_rows:retrieved 10000
+(datamanager:119) DEBUG:@_store_rows:retrieved 20000
+(datamanager:119) DEBUG:@_store_rows:retrieved 30000
+(datamanager:119) DEBUG:@_store_rows:retrieved 40000
+(datamanager:119) DEBUG:@_store_rows:retrieved 50000
+(datamanager:119) DEBUG:@_store_rows:retrieved 60000
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯_❯ 🌼   '_store_rows' Ended 🐘  tot. mem.: 61 MB  𝞓: 1 MB ⏱  1.210s
+(datamanager:327) DEBUG:@get_sale_items:table output: []
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯ 🌻   'get_sale_items' Ended 🐘  tot. mem.: 83 MB  𝞓: 23 MB ⏱  12.608s
+(log:75) DEBUG:@wrap:🍇  ❮_❮_❮_❮_❮_❮_ 'get_releases' Started
+(datamanager:741) DEBUG:@get_releases:get_releases
+(log:75) DEBUG:@wrap:🌼  ❮_❮_❮_❮_❮_❮_❮_ '_store_rows' Started
+(datamanager:88) DEBUG:@_store_rows:_store_rows: /home/revelator/statement-engine/log/cache/matcher/releases_2021-03-26.json
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯_❯ 🌼   '_store_rows' Ended 🐘  tot. mem.: 88 MB  𝞓: 0 MB ⏱  4.796s
+(log:75) DEBUG:@wrap:🍈  ❮_❮_❮_❮_❮_❮_❮_ '_load_json' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯_❯ 🍈   '_load_json' Ended 🐘  tot. mem.: 419 MB  𝞓: 331 MB ⏱  2.585s
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯ 🍇   'get_releases' Ended 🐘  tot. mem.: 419 MB  𝞓: 331 MB ⏱  7.385s
+(log:75) DEBUG:@wrap:🌷  ❮_❮_❮_❮_❮_❮_ 'inner_join' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯ 🌷   'inner_join' Ended 🐘  tot. mem.: 434 MB  𝞓: 15 MB ⏱  0.078s
+(catalog:88) DEBUG:@get_track_release_sales:loaded approved split sale items
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯ 🌶   'get_track_release_sales' Ended 🐘  tot. mem.: 128 MB  𝞓: 68 MB ⏱  20.155s
+(log:75) DEBUG:@wrap:🍆  ❮_❮_❮_❮_❮_ 'get_contracts' Started
+(datamanager:677) DEBUG:@get_contracts:get_contracts
+(log:75) DEBUG:@wrap:🌻  ❮_❮_❮_❮_❮_❮_ '_store_rows' Started
+(datamanager:88) DEBUG:@_store_rows:_store_rows: /home/revelator/statement-engine/log/cache/matcher/contracts_2021-03-26.json
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯ 🌻   '_store_rows' Ended 🐘  tot. mem.: 128 MB  𝞓: 0 MB ⏱  3.383s
+(log:75) DEBUG:@wrap:🍇  ❮_❮_❮_❮_❮_❮_ '_load_json' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯ 🍇   '_load_json' Ended 🐘  tot. mem.: 231 MB  𝞓: 103 MB ⏱  1.954s
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯ 🍆   'get_contracts' Ended 🐘  tot. mem.: 231 MB  𝞓: 103 MB ⏱  5.393s
+(log:75) DEBUG:@wrap:🌶  ❮_❮_❮_❮_❮_ 'get_track_contracts' Started
+(datamanager:717) DEBUG:@get_track_contracts:get_track_contracts
+(log:75) DEBUG:@wrap:🌻  ❮_❮_❮_❮_❮_❮_ '_store_rows' Started
+(datamanager:88) DEBUG:@_store_rows:_store_rows: /home/revelator/statement-engine/log/cache/matcher/track_contracts_2021-03-26.csv
+(datamanager:119) DEBUG:@_store_rows:retrieved 10000
+(datamanager:119) DEBUG:@_store_rows:retrieved 20000
+(datamanager:119) DEBUG:@_store_rows:retrieved 30000
+(datamanager:119) DEBUG:@_store_rows:retrieved 40000
+(datamanager:119) DEBUG:@_store_rows:retrieved 50000
+(datamanager:119) DEBUG:@_store_rows:retrieved 60000
+(datamanager:119) DEBUG:@_store_rows:retrieved 70000
+(datamanager:119) DEBUG:@_store_rows:retrieved 80000
+(datamanager:119) DEBUG:@_store_rows:retrieved 90000
+(datamanager:119) DEBUG:@_store_rows:retrieved 100000
+(datamanager:119) DEBUG:@_store_rows:retrieved 110000
+(datamanager:119) DEBUG:@_store_rows:retrieved 120000
+(datamanager:119) DEBUG:@_store_rows:retrieved 130000
+(datamanager:119) DEBUG:@_store_rows:retrieved 140000
+(datamanager:119) DEBUG:@_store_rows:retrieved 150000
+(datamanager:119) DEBUG:@_store_rows:retrieved 160000
+(datamanager:119) DEBUG:@_store_rows:retrieved 170000
+(datamanager:119) DEBUG:@_store_rows:retrieved 180000
+(datamanager:119) DEBUG:@_store_rows:retrieved 190000
+(datamanager:119) DEBUG:@_store_rows:retrieved 200000
+(datamanager:119) DEBUG:@_store_rows:retrieved 210000
+(datamanager:119) DEBUG:@_store_rows:retrieved 220000
+(datamanager:119) DEBUG:@_store_rows:retrieved 230000
+(datamanager:119) DEBUG:@_store_rows:retrieved 240000
+(datamanager:119) DEBUG:@_store_rows:retrieved 250000
+(datamanager:119) DEBUG:@_store_rows:retrieved 260000
+(datamanager:119) DEBUG:@_store_rows:retrieved 270000
+(datamanager:119) DEBUG:@_store_rows:retrieved 280000
+(datamanager:119) DEBUG:@_store_rows:retrieved 290000
+(datamanager:119) DEBUG:@_store_rows:retrieved 300000
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯ 🌻   '_store_rows' Ended 🐘  tot. mem.: 231 MB  𝞓: 0 MB ⏱  1.122s
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯ 🌶   'get_track_contracts' Ended 🐘  tot. mem.: 231 MB  𝞓: 0 MB ⏱  1.173s
+(log:75) DEBUG:@wrap:🌾  ❮_❮_❮_❮_❮_ 'get_release_contracts' Started
+(datamanager:729) DEBUG:@get_release_contracts:get_release_contracts
+(log:75) DEBUG:@wrap:🌻  ❮_❮_❮_❮_❮_❮_ '_store_rows' Started
+(datamanager:88) DEBUG:@_store_rows:_store_rows: /home/revelator/statement-engine/log/cache/matcher/release_contracts_2021-03-26.csv
+(datamanager:119) DEBUG:@_store_rows:retrieved 10000
+(datamanager:119) DEBUG:@_store_rows:retrieved 20000
+(datamanager:119) DEBUG:@_store_rows:retrieved 30000
+(datamanager:119) DEBUG:@_store_rows:retrieved 40000
+(datamanager:119) DEBUG:@_store_rows:retrieved 50000
+(datamanager:119) DEBUG:@_store_rows:retrieved 60000
+(datamanager:119) DEBUG:@_store_rows:retrieved 70000
+(datamanager:119) DEBUG:@_store_rows:retrieved 80000
+(datamanager:119) DEBUG:@_store_rows:retrieved 90000
+(datamanager:119) DEBUG:@_store_rows:retrieved 100000
+(datamanager:119) DEBUG:@_store_rows:retrieved 110000
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯ 🌻   '_store_rows' Ended 🐘  tot. mem.: 231 MB  𝞓: 0 MB ⏱  0.420s
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯ 🌾   'get_release_contracts' Ended 🐘  tot. mem.: 231 MB  𝞓: 0 MB ⏱  0.438s
+(datamanager:820) DEBUG:@get_licensor_contracts:get_licensor_contracts
+(log:75) DEBUG:@wrap:🌺  ❮_❮_❮_❮_❮_ '_store_rows' Started
+(datamanager:88) DEBUG:@_store_rows:_store_rows: /home/revelator/statement-engine/log/cache/matcher/contract_licensors_2021-03-26.csv
+(datamanager:119) DEBUG:@_store_rows:retrieved 10000
+(datamanager:119) DEBUG:@_store_rows:retrieved 20000
+(datamanager:119) DEBUG:@_store_rows:retrieved 30000
+(datamanager:119) DEBUG:@_store_rows:retrieved 40000
+(datamanager:119) DEBUG:@_store_rows:retrieved 50000
+(datamanager:119) DEBUG:@_store_rows:retrieved 60000
+(datamanager:119) DEBUG:@_store_rows:retrieved 70000
+(datamanager:119) DEBUG:@_store_rows:retrieved 80000
+(datamanager:119) DEBUG:@_store_rows:retrieved 90000
+(datamanager:119) DEBUG:@_store_rows:retrieved 100000
+(datamanager:119) DEBUG:@_store_rows:retrieved 110000
+(datamanager:119) DEBUG:@_store_rows:retrieved 120000
+(datamanager:119) DEBUG:@_store_rows:retrieved 130000
+(datamanager:119) DEBUG:@_store_rows:retrieved 140000
+(datamanager:119) DEBUG:@_store_rows:retrieved 150000
+(datamanager:119) DEBUG:@_store_rows:retrieved 160000
+(datamanager:119) DEBUG:@_store_rows:retrieved 170000
+(datamanager:119) DEBUG:@_store_rows:retrieved 180000
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯ 🌺   '_store_rows' Ended 🐘  tot. mem.: 231 MB  𝞓: 0 MB ⏱  0.937s
+(contract:733) DEBUG:@get_sales_contracts:>> get track statements contracts
+(log:75) DEBUG:@wrap:🍆  ❮_❮_❮_❮_❮_ '_set_contracts_by_level' Started
+(contract:60) DEBUG:@_set_contracts_by_level:_set_contracts_by_level on TrackId
+(log:75) DEBUG:@wrap:🍃  ❮_❮_❮_❮_❮_❮_ 'left_join' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯ 🍃   'left_join' Ended 🐘  tot. mem.: 231 MB  𝞓: 0 MB ⏱  0.111s
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯ 🍆   '_set_contracts_by_level' Ended 🐘  tot. mem.: 231 MB  𝞓: 0 MB ⏱  0.145s
+(log:75) DEBUG:@wrap:🍆  ❮_❮_❮_❮_❮_ '_set_contracts_by_level' Started
+(contract:60) DEBUG:@_set_contracts_by_level:_set_contracts_by_level on ReleaseId
+(log:75) DEBUG:@wrap:🍃  ❮_❮_❮_❮_❮_❮_ 'left_join' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯ 🍃   'left_join' Ended 🐘  tot. mem.: 228 MB  𝞓: 0 MB ⏱  0.105s
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯ 🍆   '_set_contracts_by_level' Ended 🐘  tot. mem.: 228 MB  𝞓: 0 MB ⏱  0.138s
+(log:75) DEBUG:@wrap:🍆  ❮_❮_❮_❮_❮_ '_set_contracts_by_level' Started
+(contract:60) DEBUG:@_set_contracts_by_level:_set_contracts_by_level on ArtistId
+(log:75) DEBUG:@wrap:🍃  ❮_❮_❮_❮_❮_❮_ 'left_join' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯ 🍃   'left_join' Ended 🐘  tot. mem.: 228 MB  𝞓: 0 MB ⏱  0.116s
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯ 🍆   '_set_contracts_by_level' Ended 🐘  tot. mem.: 228 MB  𝞓: 0 MB ⏱  0.149s
+(log:75) DEBUG:@wrap:🍆  ❮_❮_❮_❮_❮_ '_set_contracts_by_level' Started
+(contract:60) DEBUG:@_set_contracts_by_level:_set_contracts_by_level on LabelId
+(log:75) DEBUG:@wrap:🍃  ❮_❮_❮_❮_❮_❮_ 'left_join' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯ 🍃   'left_join' Ended 🐘  tot. mem.: 228 MB  𝞓: 0 MB ⏱  0.113s
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯ 🍆   '_set_contracts_by_level' Ended 🐘  tot. mem.: 228 MB  𝞓: 0 MB ⏱  0.146s
+(log:75) DEBUG:@wrap:🍆  ❮_❮_❮_❮_❮_ '_set_contracts_by_level' Started
+(contract:60) DEBUG:@_set_contracts_by_level:_set_contracts_by_level on EnterpriseId
+(log:75) DEBUG:@wrap:🍃  ❮_❮_❮_❮_❮_❮_ 'left_join' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯ 🍃   'left_join' Ended 🐘  tot. mem.: 228 MB  𝞓: 0 MB ⏱  0.111s
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯ 🍆   '_set_contracts_by_level' Ended 🐘  tot. mem.: 228 MB  𝞓: 0 MB ⏱  0.134s
+(notification:35) DEBUG:@error:queue_id :860
+(log:75) DEBUG:@wrap:🌶  ❮_❮_❮_❮_❮_ 'get_status' Started
+(datamanager:360) DEBUG:@get_status:get_status for 860
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯ 🌶   'get_status' Ended 🐘  tot. mem.: 228 MB  𝞓: 0 MB ⏱  0.001s
+(datamanager:425) DEBUG:@generate_only_empty_statements:generate_only_empty_statements: 860 2100==2102
+(datamanager:170) DEBUG:@_set_queue_status:_set_queue_status: Queue_id : 860, Status : FAILURE, None
+(datamanager:183) DEBUG:@_set_queue_status:SQL : update UserStatementsQueue set status=2111,LastUpdateDate=getdate() where UserStatementQueueId=860
+(log:75) DEBUG:@wrap:🌶  ❮_❮_❮_❮_❮_ 'remove_errors' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯ 🌶   'remove_errors' Ended 🐘  tot. mem.: 228 MB  𝞓: 0 MB ⏱  0.022s
+(contract:807) DEBUG:@get_sales_contracts:>> get release statements contracts
+(log:75) DEBUG:@wrap:🍆  ❮_❮_❮_❮_❮_ '_set_contracts_by_level' Started
+(contract:60) DEBUG:@_set_contracts_by_level:_set_contracts_by_level on ReleaseId
+(log:75) DEBUG:@wrap:🍃  ❮_❮_❮_❮_❮_❮_ 'left_join' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯ 🍃   'left_join' Ended 🐘  tot. mem.: 228 MB  𝞓: 0 MB ⏱  0.013s
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯ 🍆   '_set_contracts_by_level' Ended 🐘  tot. mem.: 228 MB  𝞓: 0 MB ⏱  0.018s
+(log:75) DEBUG:@wrap:🍆  ❮_❮_❮_❮_❮_ '_set_contracts_by_level' Started
+(contract:60) DEBUG:@_set_contracts_by_level:_set_contracts_by_level on ArtistId
+(log:75) DEBUG:@wrap:🍃  ❮_❮_❮_❮_❮_❮_ 'left_join' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯ 🍃   'left_join' Ended 🐘  tot. mem.: 228 MB  𝞓: 0 MB ⏱  0.014s
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯ 🍆   '_set_contracts_by_level' Ended 🐘  tot. mem.: 228 MB  𝞓: 0 MB ⏱  0.018s
+(log:75) DEBUG:@wrap:🍆  ❮_❮_❮_❮_❮_ '_set_contracts_by_level' Started
+(contract:60) DEBUG:@_set_contracts_by_level:_set_contracts_by_level on LabelId
+(log:75) DEBUG:@wrap:🍃  ❮_❮_❮_❮_❮_❮_ 'left_join' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯ 🍃   'left_join' Ended 🐘  tot. mem.: 228 MB  𝞓: 0 MB ⏱  0.014s
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯ 🍆   '_set_contracts_by_level' Ended 🐘  tot. mem.: 228 MB  𝞓: 0 MB ⏱  0.018s
+(log:75) DEBUG:@wrap:🍆  ❮_❮_❮_❮_❮_ '_set_contracts_by_level' Started
+(contract:60) DEBUG:@_set_contracts_by_level:_set_contracts_by_level on EnterpriseId
+(log:75) DEBUG:@wrap:🍃  ❮_❮_❮_❮_❮_❮_ 'left_join' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯ 🍃   'left_join' Ended 🐘  tot. mem.: 228 MB  𝞓: 0 MB ⏱  0.014s
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯ 🍆   '_set_contracts_by_level' Ended 🐘  tot. mem.: 228 MB  𝞓: 0 MB ⏱  0.017s
+(contract:871) DEBUG:@get_sales_contracts:>> loaded approved sale active contracts
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯ 🍁   'get_sales_contracts' Ended 🐘  tot. mem.: 228 MB  𝞓: 168 MB ⏱  31.101s
+(log:75) DEBUG:@wrap:🍅  ❮_❮_❮_❮_ 'get_sales_contracts_terms' Started
+(contract:555) DEBUG:@get_sales_contracts_terms:>>>get_sales_contracts_terms: 151685
+(datamanager:776) DEBUG:@get_contract_terms:get_contract_terms
+(log:75) DEBUG:@wrap:🌺  ❮_❮_❮_❮_❮_ '_store_rows' Started
+(datamanager:88) DEBUG:@_store_rows:_store_rows: /home/revelator/statement-engine/log/cache/matcher/contract_terms_2021-03-26.csv
+(datamanager:119) DEBUG:@_store_rows:retrieved 10000
+(datamanager:119) DEBUG:@_store_rows:retrieved 20000
+(datamanager:119) DEBUG:@_store_rows:retrieved 30000
+(datamanager:119) DEBUG:@_store_rows:retrieved 40000
+(datamanager:119) DEBUG:@_store_rows:retrieved 50000
+(datamanager:119) DEBUG:@_store_rows:retrieved 60000
+(datamanager:119) DEBUG:@_store_rows:retrieved 70000
+(datamanager:119) DEBUG:@_store_rows:retrieved 80000
+(datamanager:119) DEBUG:@_store_rows:retrieved 90000
+(datamanager:119) DEBUG:@_store_rows:retrieved 100000
+(datamanager:119) DEBUG:@_store_rows:retrieved 110000
+(datamanager:119) DEBUG:@_store_rows:retrieved 120000
+(datamanager:119) DEBUG:@_store_rows:retrieved 130000
+(datamanager:119) DEBUG:@_store_rows:retrieved 140000
+(datamanager:119) DEBUG:@_store_rows:retrieved 150000
+(datamanager:119) DEBUG:@_store_rows:retrieved 160000
+(datamanager:119) DEBUG:@_store_rows:retrieved 170000
+(datamanager:119) DEBUG:@_store_rows:retrieved 180000
+(datamanager:119) DEBUG:@_store_rows:retrieved 190000
+(datamanager:119) DEBUG:@_store_rows:retrieved 200000
+(datamanager:119) DEBUG:@_store_rows:retrieved 210000
+(datamanager:119) DEBUG:@_store_rows:retrieved 220000
+(datamanager:119) DEBUG:@_store_rows:retrieved 230000
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯ 🌺   '_store_rows' Ended 🐘  tot. mem.: 228 MB  𝞓: 0 MB ⏱  1.961s
+(log:75) DEBUG:@wrap:🍂  ❮_❮_❮_❮_❮_ 'get_sales_contracts_terms_by_delivery_types' Started
+(datamanager:831) DEBUG:@get_contract_delivery_types:get_contract_delivery_types
+(log:75) DEBUG:@wrap:🌻  ❮_❮_❮_❮_❮_❮_ '_store_rows' Started
+(datamanager:88) DEBUG:@_store_rows:_store_rows: /home/revelator/statement-engine/log/cache/matcher/contract_delivery_types_2021-03-26.csv
+(datamanager:119) DEBUG:@_store_rows:retrieved 10000
+(datamanager:119) DEBUG:@_store_rows:retrieved 20000
+(datamanager:119) DEBUG:@_store_rows:retrieved 30000
+(datamanager:119) DEBUG:@_store_rows:retrieved 40000
+(datamanager:119) DEBUG:@_store_rows:retrieved 50000
+(datamanager:119) DEBUG:@_store_rows:retrieved 60000
+(datamanager:119) DEBUG:@_store_rows:retrieved 70000
+(datamanager:119) DEBUG:@_store_rows:retrieved 80000
+(datamanager:119) DEBUG:@_store_rows:retrieved 90000
+(datamanager:119) DEBUG:@_store_rows:retrieved 100000
+(datamanager:119) DEBUG:@_store_rows:retrieved 110000
+(datamanager:119) DEBUG:@_store_rows:retrieved 120000
+(datamanager:119) DEBUG:@_store_rows:retrieved 130000
+(datamanager:119) DEBUG:@_store_rows:retrieved 140000
+(datamanager:119) DEBUG:@_store_rows:retrieved 150000
+(datamanager:119) DEBUG:@_store_rows:retrieved 160000
+(datamanager:119) DEBUG:@_store_rows:retrieved 170000
+(datamanager:119) DEBUG:@_store_rows:retrieved 180000
+(datamanager:119) DEBUG:@_store_rows:retrieved 190000
+(datamanager:119) DEBUG:@_store_rows:retrieved 200000
+(datamanager:119) DEBUG:@_store_rows:retrieved 210000
+(datamanager:119) DEBUG:@_store_rows:retrieved 220000
+(datamanager:119) DEBUG:@_store_rows:retrieved 230000
+(datamanager:119) DEBUG:@_store_rows:retrieved 240000
+(datamanager:119) DEBUG:@_store_rows:retrieved 250000
+(datamanager:119) DEBUG:@_store_rows:retrieved 260000
+(datamanager:119) DEBUG:@_store_rows:retrieved 270000
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯ 🌻   '_store_rows' Ended 🐘  tot. mem.: 245 MB  𝞓: 0 MB ⏱  1.526s
+(log:75) DEBUG:@wrap:🌷  ❮_❮_❮_❮_❮_❮_ 'inner_join' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯ 🌷   'inner_join' Ended 🐘  tot. mem.: 250 MB  𝞓: 0 MB ⏱  0.093s
+(log:75) DEBUG:@wrap:🌿  ❮_❮_❮_❮_❮_❮_ 'inner_join_w_errors' Started
+(log:75) DEBUG:@wrap:🌸  ❮_❮_❮_❮_❮_❮_❮_ 'inner_join_w_missing' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯_❯ 🌸   'inner_join_w_missing' Ended 🐘  tot. mem.: 250 MB  𝞓: 0 MB ⏱  0.013s
+(log:75) DEBUG:@wrap:🍄  ❮_❮_❮_❮_❮_❮_❮_ 'left_join' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯_❯ 🍄   'left_join' Ended 🐘  tot. mem.: 250 MB  𝞓: 0 MB ⏱  0.014s
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯ 🌿   'inner_join_w_errors' Ended 🐘  tot. mem.: 250 MB  𝞓: 0 MB ⏱  0.028s
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯ 🍂   'get_sales_contracts_terms_by_delivery_types' Ended 🐘  tot. mem.: 246 MB  𝞓: 1 MB ⏱  1.790s
+(log:75) DEBUG:@wrap:🌶  ❮_❮_❮_❮_❮_ 'get_sales_contracts_terms_by_release_types' Started
+(contract:210) DEBUG:@get_sales_contracts_terms_by_release_types:>> getting release types terms: 151685
+(datamanager:798) DEBUG:@get_contract_release_types:get_contract_release_types
+(log:75) DEBUG:@wrap:🌻  ❮_❮_❮_❮_❮_❮_ '_store_rows' Started
+(datamanager:88) DEBUG:@_store_rows:_store_rows: /home/revelator/statement-engine/log/cache/matcher/contract_release_types_2021-03-26.csv
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯ 🌻   '_store_rows' Ended 🐘  tot. mem.: 246 MB  𝞓: 0 MB ⏱  0.008s
+(log:75) DEBUG:@wrap:🌷  ❮_❮_❮_❮_❮_❮_ 'inner_join' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯ 🌷   'inner_join' Ended 🐘  tot. mem.: 246 MB  𝞓: 0 MB ⏱  0.096s
+(log:75) DEBUG:@wrap:🌿  ❮_❮_❮_❮_❮_❮_ 'inner_join_w_errors' Started
+(log:75) DEBUG:@wrap:🌸  ❮_❮_❮_❮_❮_❮_❮_ 'inner_join_w_missing' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯_❯ 🌸   'inner_join_w_missing' Ended 🐘  tot. mem.: 246 MB  𝞓: 0 MB ⏱  0.012s
+(log:75) DEBUG:@wrap:🍄  ❮_❮_❮_❮_❮_❮_❮_ 'left_join' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯_❯ 🍄   'left_join' Ended 🐘  tot. mem.: 246 MB  𝞓: 0 MB ⏱  0.013s
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯ 🌿   'inner_join_w_errors' Ended 🐘  tot. mem.: 246 MB  𝞓: 0 MB ⏱  0.026s
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯ 🌶   'get_sales_contracts_terms_by_release_types' Ended 🐘  tot. mem.: 246 MB  𝞓: 0 MB ⏱  0.168s
+(log:75) DEBUG:@wrap:🌾  ❮_❮_❮_❮_❮_ 'get_sales_contracts_terms_by_distributors' Started
+(contract:278) DEBUG:@get_sales_contracts_terms_by_distributors:getting distributors terms: 151685
+(datamanager:809) DEBUG:@get_contract_distributor_stores:get_contract_distributor_stores
+(log:75) DEBUG:@wrap:🌻  ❮_❮_❮_❮_❮_❮_ '_store_rows' Started
+(datamanager:88) DEBUG:@_store_rows:_store_rows: /home/revelator/statement-engine/log/cache/matcher/contract_distributor_stores_2021-03-26.csv
+(datamanager:119) DEBUG:@_store_rows:retrieved 10000
+(datamanager:119) DEBUG:@_store_rows:retrieved 20000
+(datamanager:119) DEBUG:@_store_rows:retrieved 30000
+(datamanager:119) DEBUG:@_store_rows:retrieved 40000
+(datamanager:119) DEBUG:@_store_rows:retrieved 50000
+(datamanager:119) DEBUG:@_store_rows:retrieved 60000
+(datamanager:119) DEBUG:@_store_rows:retrieved 70000
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯ 🌻   '_store_rows' Ended 🐘  tot. mem.: 246 MB  𝞓: 0 MB ⏱  0.413s
+(log:75) DEBUG:@wrap:🌷  ❮_❮_❮_❮_❮_❮_ 'inner_join' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯ 🌷   'inner_join' Ended 🐘  tot. mem.: 249 MB  𝞓: 0 MB ⏱  0.111s
+(log:75) DEBUG:@wrap:🍃  ❮_❮_❮_❮_❮_❮_ 'left_join' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯ 🍃   'left_join' Ended 🐘  tot. mem.: 250 MB  𝞓: 0 MB ⏱  0.037s
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯ 🌾   'get_sales_contracts_terms_by_distributors' Ended 🐘  tot. mem.: 247 MB  𝞓: 1 MB ⏱  0.712s
+(log:75) DEBUG:@wrap:🌾  ❮_❮_❮_❮_❮_ 'get_sales_contracts_terms_by_countries' Started
+(contract:484) DEBUG:@get_sales_contracts_terms_by_countries:getting countries terms: 151685
+(datamanager:787) DEBUG:@get_contract_countries:get_contract_countries
+(log:75) DEBUG:@wrap:🌻  ❮_❮_❮_❮_❮_❮_ '_store_rows' Started
+(datamanager:88) DEBUG:@_store_rows:_store_rows: /home/revelator/statement-engine/log/cache/matcher/contract_countries_2021-03-26.csv
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯ 🌻   '_store_rows' Ended 🐘  tot. mem.: 247 MB  𝞓: 0 MB ⏱  0.011s
+(log:75) DEBUG:@wrap:🌷  ❮_❮_❮_❮_❮_❮_ 'inner_join' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯ 🌷   'inner_join' Ended 🐘  tot. mem.: 247 MB  𝞓: 0 MB ⏱  0.091s
+(log:75) DEBUG:@wrap:🍃  ❮_❮_❮_❮_❮_❮_ 'left_join' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯ 🍃   'left_join' Ended 🐘  tot. mem.: 247 MB  𝞓: 0 MB ⏱  0.014s
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯ 🌾   'get_sales_contracts_terms_by_countries' Ended 🐘  tot. mem.: 247 MB  𝞓: 0 MB ⏱  0.178s
+(log:75) DEBUG:@wrap:🌺  ❮_❮_❮_❮_❮_ 'get_sales_contracts_terms_none_sales' Started
+(log:75) DEBUG:@wrap:🌿  ❮_❮_❮_❮_❮_❮_ 'inner_join_w_errors' Started
+(log:75) DEBUG:@wrap:🌸  ❮_❮_❮_❮_❮_❮_❮_ 'inner_join_w_missing' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯_❯ 🌸   'inner_join_w_missing' Ended 🐘  tot. mem.: 229 MB  𝞓: 0 MB ⏱  0.223s
+(log:75) DEBUG:@wrap:🍄  ❮_❮_❮_❮_❮_❮_❮_ 'left_join' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯_❯ 🍄   'left_join' Ended 🐘  tot. mem.: 229 MB  𝞓: 0 MB ⏱  0.095s
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯ 🌿   'inner_join_w_errors' Ended 🐘  tot. mem.: 229 MB  𝞓: 0 MB ⏱  0.330s
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯ 🌺   'get_sales_contracts_terms_none_sales' Ended 🐘  tot. mem.: 229 MB  𝞓: 0 MB ⏱  0.335s
+(contract:652) DEBUG:@get_sales_contracts_terms:loaded approved sale contracts terms
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯ 🍅   'get_sales_contracts_terms' Ended 🐘  tot. mem.: 219 MB  𝞓: -9 MB ⏱  5.728s
+(log:75) DEBUG:@wrap:🌹  ❮_❮_❮_❮_ 'get_sales_contracts_deductions' Started
+(log:75) DEBUG:@wrap:🍆  ❮_❮_❮_❮_❮_ 'get_contracts' Started
+(datamanager:677) DEBUG:@get_contracts:get_contracts
+(log:75) DEBUG:@wrap:🍇  ❮_❮_❮_❮_❮_❮_ '_load_json' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯ 🍇   '_load_json' Ended 🐘  tot. mem.: 269 MB  𝞓: 50 MB ⏱  1.960s
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯ 🍆   'get_contracts' Ended 🐘  tot. mem.: 269 MB  𝞓: 50 MB ⏱  1.960s
+(log:75) DEBUG:@wrap:🌶  ❮_❮_❮_❮_❮_ 'inner_join' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯ 🌶   'inner_join' Ended 🐘  tot. mem.: 269 MB  𝞓: 0 MB ⏱  0.074s
+(log:75) DEBUG:@wrap:🌺  ❮_❮_❮_❮_❮_ 'get_tracks' Started
+(datamanager:753) DEBUG:@get_tracks:get_tracks
+(log:75) DEBUG:@wrap:🌻  ❮_❮_❮_❮_❮_❮_ '_store_rows' Started
+(datamanager:88) DEBUG:@_store_rows:_store_rows: /home/revelator/statement-engine/log/cache/matcher/tracks_2021-03-26.json
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯ 🌻   '_store_rows' Ended 🐘  tot. mem.: 269 MB  𝞓: 0 MB ⏱  18.041s
+(log:75) DEBUG:@wrap:🍇  ❮_❮_❮_❮_❮_❮_ '_load_json' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯ 🍇   '_load_json' Ended 🐘  tot. mem.: 1595 MB  𝞓: 1326 MB ⏱  10.198s
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯ 🌺   'get_tracks' Ended 🐘  tot. mem.: 1595 MB  𝞓: 1326 MB ⏱  28.245s
+(datamanager:874) DEBUG:@get_track_compositions:get_track_compositions
+(log:75) DEBUG:@wrap:🌺  ❮_❮_❮_❮_❮_ '_store_rows' Started
+(datamanager:88) DEBUG:@_store_rows:_store_rows: /home/revelator/statement-engine/log/cache/matcher/track_compositions_2021-03-26.csv
+(datamanager:119) DEBUG:@_store_rows:retrieved 10000
+(datamanager:119) DEBUG:@_store_rows:retrieved 20000
+(datamanager:119) DEBUG:@_store_rows:retrieved 30000
+(datamanager:119) DEBUG:@_store_rows:retrieved 40000
+(datamanager:119) DEBUG:@_store_rows:retrieved 50000
+(datamanager:119) DEBUG:@_store_rows:retrieved 60000
+(datamanager:119) DEBUG:@_store_rows:retrieved 70000
+(datamanager:119) DEBUG:@_store_rows:retrieved 80000
+(datamanager:119) DEBUG:@_store_rows:retrieved 90000
+(datamanager:119) DEBUG:@_store_rows:retrieved 100000
+(datamanager:119) DEBUG:@_store_rows:retrieved 110000
+(datamanager:119) DEBUG:@_store_rows:retrieved 120000
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯ 🌺   '_store_rows' Ended 🐘  tot. mem.: 1595 MB  𝞓: 0 MB ⏱  0.449s
+(log:75) DEBUG:@wrap:🍂  ❮_❮_❮_❮_❮_ 'get_track_release_split' Started
+(catalog:30) DEBUG:@get_track_release_split:get_track_release_split
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯ 🍂   'get_track_release_split' Ended 🐘  tot. mem.: 1595 MB  𝞓: 0 MB ⏱  0.019s
+(mechanics:191) DEBUG:@get_sales_contracts_deductions:calculate mechanics for tracks
+(log:75) DEBUG:@wrap:🌾  ❮_❮_❮_❮_❮_ '_get_mechanicals_candidates' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯ 🌾   '_get_mechanicals_candidates' Ended 🐘  tot. mem.: 1595 MB  𝞓: 0 MB ⏱  0.001s
+(log:75) DEBUG:@wrap:🌶  ❮_❮_❮_❮_❮_ 'inner_join' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯ 🌶   'inner_join' Ended 🐘  tot. mem.: 1574 MB  𝞓: -21 MB ⏱  0.176s
+(log:75) DEBUG:@wrap:🍆  ❮_❮_❮_❮_❮_ '_get_deduction_track_type_sales' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯ 🍆   '_get_deduction_track_type_sales' Ended 🐘  tot. mem.: 1574 MB  𝞓: 0 MB ⏱  0.002s
+(log:75) DEBUG:@wrap:🌶  ❮_❮_❮_❮_❮_ '_get_deduction_sales' Started
+(log:75) DEBUG:@wrap:🍇  ❮_❮_❮_❮_❮_❮_ '_get_deduction_sales_percent' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯ 🍇   '_get_deduction_sales_percent' Ended 🐘  tot. mem.: 1574 MB  𝞓: 0 MB ⏱  0.001s
+(log:75) DEBUG:@wrap:🌻  ❮_❮_❮_❮_❮_❮_ '_get_deduction_sales_penny' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯ 🌻   '_get_deduction_sales_penny' Ended 🐘  tot. mem.: 1574 MB  𝞓: 0 MB ⏱  0.001s
+(log:75) DEBUG:@wrap:🍃  ❮_❮_❮_❮_❮_❮_ '_get_deduction_sales_copyright' Started
+(log:75) DEBUG:@wrap:🌸  ❮_❮_❮_❮_❮_❮_❮_ 'inner_join_w_missing' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯_❯ 🌸   'inner_join_w_missing' Ended 🐘  tot. mem.: 1574 MB  𝞓: 0 MB ⏱  0.040s
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯ 🍃   '_get_deduction_sales_copyright' Ended 🐘  tot. mem.: 1574 MB  𝞓: 0 MB ⏱  0.054s
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯ 🌶   '_get_deduction_sales' Ended 🐘  tot. mem.: 1574 MB  𝞓: 0 MB ⏱  0.061s
+(mechanics:212) DEBUG:@get_sales_contracts_deductions:calculate mechanics for releases
+(log:75) DEBUG:@wrap:🍂  ❮_❮_❮_❮_❮_ 'get_release_tracks' Started
+(datamanager:765) DEBUG:@get_release_tracks:get_release_tracks
+(log:75) DEBUG:@wrap:🌻  ❮_❮_❮_❮_❮_❮_ '_store_rows' Started
+(datamanager:88) DEBUG:@_store_rows:_store_rows: /home/revelator/statement-engine/log/cache/matcher/releases_tracks_2021-03-26.json
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯ 🌻   '_store_rows' Ended 🐘  tot. mem.: 1574 MB  𝞓: 0 MB ⏱  12.587s
+(log:75) DEBUG:@wrap:🍇  ❮_❮_❮_❮_❮_❮_ '_load_json' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯ 🍇   '_load_json' Ended 🐘  tot. mem.: 1630 MB  𝞓: 56 MB ⏱  7.334s
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯ 🍂   'get_release_tracks' Ended 🐘  tot. mem.: 1630 MB  𝞓: 56 MB ⏱  19.924s
+(log:75) DEBUG:@wrap:🌾  ❮_❮_❮_❮_❮_ '_get_mechanicals_candidates' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯ 🌾   '_get_mechanicals_candidates' Ended 🐘  tot. mem.: 1630 MB  𝞓: 0 MB ⏱  0.001s
+(log:75) DEBUG:@wrap:🌶  ❮_❮_❮_❮_❮_ 'inner_join' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯ 🌶   'inner_join' Ended 🐘  tot. mem.: 1630 MB  𝞓: 0 MB ⏱  0.128s
+(log:75) DEBUG:@wrap:🌶  ❮_❮_❮_❮_❮_ 'inner_join' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯ 🌶   'inner_join' Ended 🐘  tot. mem.: 1630 MB  𝞓: 0 MB ⏱  0.108s
+(log:75) DEBUG:@wrap:🍆  ❮_❮_❮_❮_❮_ '_get_deduction_track_type_sales' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯ 🍆   '_get_deduction_track_type_sales' Ended 🐘  tot. mem.: 1574 MB  𝞓: 0 MB ⏱  0.002s
+(log:75) DEBUG:@wrap:🌶  ❮_❮_❮_❮_❮_ '_get_deduction_sales' Started
+(log:75) DEBUG:@wrap:🍇  ❮_❮_❮_❮_❮_❮_ '_get_deduction_sales_percent' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯ 🍇   '_get_deduction_sales_percent' Ended 🐘  tot. mem.: 1574 MB  𝞓: 0 MB ⏱  0.001s
+(log:75) DEBUG:@wrap:🌻  ❮_❮_❮_❮_❮_❮_ '_get_deduction_sales_penny' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯ 🌻   '_get_deduction_sales_penny' Ended 🐘  tot. mem.: 1574 MB  𝞓: 0 MB ⏱  0.001s
+(log:75) DEBUG:@wrap:🍃  ❮_❮_❮_❮_❮_❮_ '_get_deduction_sales_copyright' Started
+(log:75) DEBUG:@wrap:🌸  ❮_❮_❮_❮_❮_❮_❮_ 'inner_join_w_missing' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯_❯ 🌸   'inner_join_w_missing' Ended 🐘  tot. mem.: 1574 MB  𝞓: 0 MB ⏱  0.040s
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯ 🍃   '_get_deduction_sales_copyright' Ended 🐘  tot. mem.: 1574 MB  𝞓: 0 MB ⏱  0.053s
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯ 🌶   '_get_deduction_sales' Ended 🐘  tot. mem.: 1574 MB  𝞓: 0 MB ⏱  0.059s
+(log:75) DEBUG:@wrap:🌶  ❮_❮_❮_❮_❮_ 'inner_join' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯ 🌶   'inner_join' Ended 🐘  tot. mem.: 1574 MB  𝞓: 0 MB ⏱  0.004s
+(log:75) DEBUG:@wrap:🌶  ❮_❮_❮_❮_❮_ 'inner_join' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯ 🌶   'inner_join' Ended 🐘  tot. mem.: 1574 MB  𝞓: 0 MB ⏱  0.005s
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯ 🌹   'get_sales_contracts_deductions' Ended 🐘  tot. mem.: 290 MB  𝞓: 71 MB ⏱  51.619s
+(log:75) DEBUG:@wrap:🌵  ❮_❮_❮_❮_ 'get_payee_terms_rate' Started
+(contract:876) DEBUG:@get_payee_terms_rate:get_payee_terms_rate
+(log:75) DEBUG:@wrap:🌺  ❮_❮_❮_❮_❮_ '_get_sales_contracts_terms_rate' Started
+(contract:136) DEBUG:@_get_sales_contracts_terms_rate:_get_sales_contracts_terms_rate
+(contract:141) DEBUG:@_get_sales_contracts_terms_rate:loaded sales contracts terms rate
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯ 🌺   '_get_sales_contracts_terms_rate' Ended 🐘  tot. mem.: 290 MB  𝞓: 0 MB ⏱  0.001s
+(datamanager:842) DEBUG:@get_contract_payees:get_contract_payees
+(log:75) DEBUG:@wrap:🌺  ❮_❮_❮_❮_❮_ '_store_rows' Started
+(datamanager:88) DEBUG:@_store_rows:_store_rows: /home/revelator/statement-engine/log/cache/matcher/contract_payees_2021-03-26.csv
+(datamanager:119) DEBUG:@_store_rows:retrieved 10000
+(datamanager:119) DEBUG:@_store_rows:retrieved 20000
+(datamanager:119) DEBUG:@_store_rows:retrieved 30000
+(datamanager:119) DEBUG:@_store_rows:retrieved 40000
+(datamanager:119) DEBUG:@_store_rows:retrieved 50000
+(datamanager:119) DEBUG:@_store_rows:retrieved 60000
+(datamanager:119) DEBUG:@_store_rows:retrieved 70000
+(datamanager:119) DEBUG:@_store_rows:retrieved 80000
+(datamanager:119) DEBUG:@_store_rows:retrieved 90000
+(datamanager:119) DEBUG:@_store_rows:retrieved 100000
+(datamanager:119) DEBUG:@_store_rows:retrieved 110000
+(datamanager:119) DEBUG:@_store_rows:retrieved 120000
+(datamanager:119) DEBUG:@_store_rows:retrieved 130000
+(datamanager:119) DEBUG:@_store_rows:retrieved 140000
+(datamanager:119) DEBUG:@_store_rows:retrieved 150000
+(datamanager:119) DEBUG:@_store_rows:retrieved 160000
+(datamanager:119) DEBUG:@_store_rows:retrieved 170000
+(datamanager:119) DEBUG:@_store_rows:retrieved 180000
+(datamanager:119) DEBUG:@_store_rows:retrieved 190000
+(datamanager:119) DEBUG:@_store_rows:retrieved 200000
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯ 🌺   '_store_rows' Ended 🐘  tot. mem.: 290 MB  𝞓: 0 MB ⏱  1.876s
+(log:75) DEBUG:@wrap:🌶  ❮_❮_❮_❮_❮_ 'inner_join' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯ 🌶   'inner_join' Ended 🐘  tot. mem.: 290 MB  𝞓: 0 MB ⏱  0.076s
+(contract:884) DEBUG:@get_payee_terms_rate:loaded payee terms rate
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯ 🌵   'get_payee_terms_rate' Ended 🐘  tot. mem.: 290 MB  𝞓: 0 MB ⏱  2.038s
+(billing:96) DEBUG:@get_calculated_payees:✅ loaded calculated payees
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🌴   'get_calculated_payees' Ended 🐘  tot. mem.: 211 MB  𝞓: 151 MB ⏱  90.517s
+(log:75) DEBUG:@wrap:🌸  ❮_❮_❮_ '_get_prepared_statements' Started
+(statement:195) DEBUG:@_get_prepared_statements:>> _get_prepared_statements: 2020-11
+(datamanager:885) DEBUG:@get_distributors:get_distributors
+(log:75) DEBUG:@wrap:🌹  ❮_❮_❮_❮_ '_store_rows' Started
+(datamanager:88) DEBUG:@_store_rows:_store_rows: /home/revelator/statement-engine/log/cache/matcher/distributors_2021-03-26.csv
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯ 🌹   '_store_rows' Ended 🐘  tot. mem.: 211 MB  𝞓: 0 MB ⏱  0.002s
+(datamanager:896) DEBUG:@get_countries:get_countries
+(log:75) DEBUG:@wrap:🌹  ❮_❮_❮_❮_ '_store_rows' Started
+(datamanager:88) DEBUG:@_store_rows:_store_rows: /home/revelator/statement-engine/log/cache/matcher/countries_2021-03-26.csv
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯ 🌹   '_store_rows' Ended 🐘  tot. mem.: 211 MB  𝞓: 0 MB ⏱  0.001s
+(datamanager:907) DEBUG:@get_labels:get_labels
+(log:75) DEBUG:@wrap:🌹  ❮_❮_❮_❮_ '_store_rows' Started
+(datamanager:88) DEBUG:@_store_rows:_store_rows: /home/revelator/statement-engine/log/cache/matcher/labels_2021-03-26.json
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯ 🌹   '_store_rows' Ended 🐘  tot. mem.: 211 MB  𝞓: 0 MB ⏱  1.286s
+(log:75) DEBUG:@wrap:🍅  ❮_❮_❮_❮_ '_load_json' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯ 🍅   '_load_json' Ended 🐘  tot. mem.: 266 MB  𝞓: 55 MB ⏱  0.728s
+(datamanager:918) DEBUG:@get_artists:get_artists
+(log:75) DEBUG:@wrap:🌹  ❮_❮_❮_❮_ '_store_rows' Started
+(datamanager:88) DEBUG:@_store_rows:_store_rows: /home/revelator/statement-engine/log/cache/matcher/artists_2021-03-26.json
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯ 🌹   '_store_rows' Ended 🐘  tot. mem.: 266 MB  𝞓: 0 MB ⏱  1.594s
+(log:75) DEBUG:@wrap:🍅  ❮_❮_❮_❮_ '_load_json' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯ 🍅   '_load_json' Ended 🐘  tot. mem.: 284 MB  𝞓: 18 MB ⏱  0.830s
+(log:75) DEBUG:@wrap:🍅  ❮_❮_❮_❮_ 'get_releases' Started
+(datamanager:741) DEBUG:@get_releases:get_releases
+(log:75) DEBUG:@wrap:🍆  ❮_❮_❮_❮_❮_ '_load_json' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯ 🍆   '_load_json' Ended 🐘  tot. mem.: 518 MB  𝞓: 234 MB ⏱  2.570s
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯ 🍅   'get_releases' Ended 🐘  tot. mem.: 518 MB  𝞓: 234 MB ⏱  2.571s
+(datamanager:929) DEBUG:@get_delivery_types:get_delivery_types
+(log:75) DEBUG:@wrap:🌹  ❮_❮_❮_❮_ '_store_rows' Started
+(datamanager:88) DEBUG:@_store_rows:_store_rows: /home/revelator/statement-engine/log/cache/matcher/delivery_types_2021-03-26.csv
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯ 🌹   '_store_rows' Ended 🐘  tot. mem.: 518 MB  𝞓: 0 MB ⏱  0.000s
+(datamanager:940) DEBUG:@get_sale_item_types:get_sale_item_types
+(log:75) DEBUG:@wrap:🌹  ❮_❮_❮_❮_ '_store_rows' Started
+(datamanager:88) DEBUG:@_store_rows:_store_rows: /home/revelator/statement-engine/log/cache/matcher/sale_item_types_2021-03-26.csv
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯ 🌹   '_store_rows' Ended 🐘  tot. mem.: 518 MB  𝞓: 0 MB ⏱  0.000s
+(log:75) DEBUG:@wrap:🌹  ❮_❮_❮_❮_ 'get_tracks' Started
+(datamanager:753) DEBUG:@get_tracks:get_tracks
+(log:75) DEBUG:@wrap:🍆  ❮_❮_❮_❮_❮_ '_load_json' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯ 🍆   '_load_json' Ended 🐘  tot. mem.: 1610 MB  𝞓: 1092 MB ⏱  10.181s
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯ 🌹   'get_tracks' Ended 🐘  tot. mem.: 1610 MB  𝞓: 1092 MB ⏱  10.182s
+(log:75) DEBUG:@wrap:🌵  ❮_❮_❮_❮_ 'inner_join' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯ 🌵   'inner_join' Ended 🐘  tot. mem.: 1610 MB  𝞓: 0 MB ⏱  0.050s
+(log:75) DEBUG:@wrap:🌵  ❮_❮_❮_❮_ 'inner_join' Started
+(log:75) DEBUG:@wrap:🌺  ❮_❮_❮_❮_❮_ 'remove_missing' Started
+(statement:223) DEBUG:@remove_missing:missing CountryId : Empty DataFrame
+Columns: [ArtistId, ContractId, ContractTermsId, ContractTermsRate, CountryId, Date, DeliveryTypeId, DistributorStoreId, EnterpriseId, Id, IsCountriesIncluded, IsDistributorStoresIncluded, ItemTypeId, LabelId, ParentSaleId, PayorDistributorId, PayorDistributorStoreId, Quantity, ReleaseArtistID, ReleaseId, ReleaseTypeId, TotalNet, TrackId, Mechanics, PayeeId, SharePercentage, Balance, StartingBalance, IsCommissionPayee, TotalNetMechanics, TotalContractTermsRate, PayeeTotalNet, Service, Country]
+Index: []
+(notification:35) DEBUG:@error:queue_id :860
+(log:75) DEBUG:@wrap:🌷  ❮_❮_❮_❮_❮_❮_ 'get_status' Started
+(datamanager:360) DEBUG:@get_status:get_status for 860
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯ 🌷   'get_status' Ended 🐘  tot. mem.: 1610 MB  𝞓: 0 MB ⏱  0.001s
+(datamanager:425) DEBUG:@generate_only_empty_statements:generate_only_empty_statements: 860 2111==2102
+(datamanager:170) DEBUG:@_set_queue_status:_set_queue_status: Queue_id : 860, Status : FAILURE, None
+(datamanager:183) DEBUG:@_set_queue_status:SQL : update UserStatementsQueue set status=2111,LastUpdateDate=getdate() where UserStatementQueueId=860
+(log:75) DEBUG:@wrap:🌷  ❮_❮_❮_❮_❮_❮_ 'remove_errors' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯ 🌷   'remove_errors' Ended 🐘  tot. mem.: 1610 MB  𝞓: 0 MB ⏱  0.020s
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯ 🌺   'remove_missing' Ended 🐘  tot. mem.: 1610 MB  𝞓: 0 MB ⏱  0.257s
+(log:75) DEBUG:@wrap:🌶  ❮_❮_❮_❮_❮_ 'inner_join' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯ 🌶   'inner_join' Ended 🐘  tot. mem.: 1610 MB  𝞓: 0 MB ⏱  0.090s
+(log:75) DEBUG:@wrap:🌶  ❮_❮_❮_❮_❮_ 'inner_join' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯ 🌶   'inner_join' Ended 🐘  tot. mem.: 1610 MB  𝞓: 0 MB ⏱  0.101s
+(log:75) DEBUG:@wrap:🌶  ❮_❮_❮_❮_❮_ 'inner_join' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯ 🌶   'inner_join' Ended 🐘  tot. mem.: 1610 MB  𝞓: 0 MB ⏱  0.022s
+(log:75) DEBUG:@wrap:🌶  ❮_❮_❮_❮_❮_ 'inner_join' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯ 🌶   'inner_join' Ended 🐘  tot. mem.: 1610 MB  𝞓: 0 MB ⏱  0.023s
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯ 🌸   '_get_prepared_statements' Ended 🐘  tot. mem.: 297 MB  𝞓: 86 MB ⏱  19.157s
+(datamanager:951) DEBUG:@get_balances:get_balances
+(log:75) DEBUG:@wrap:🌹  ❮_❮_❮_❮_ '_store_rows' Started
+(datamanager:88) DEBUG:@_store_rows:_store_rows: /home/revelator/statement-engine/log/cache/matcher/balances_2021-03-26.csv
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯ 🌹   '_store_rows' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.001s
+(statement:687) DEBUG:@match_statements:checking balances
+(log:75) DEBUG:@wrap:🍁  ❮_❮_❮_❮_ '_get_payee_balances' Started
+(statement:420) DEBUG:@_get_payee_balances:>> _get_payee_balances
+(log:75) DEBUG:@wrap:🍂  ❮_❮_❮_❮_❮_ 'get_payees' Started
+(datamanager:705) DEBUG:@get_payees:get_payees
+(log:75) DEBUG:@wrap:🌻  ❮_❮_❮_❮_❮_❮_ '_store_rows' Started
+(datamanager:88) DEBUG:@_store_rows:_store_rows: /home/revelator/statement-engine/log/cache/matcher/payees_2021-03-26.json
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯ 🌻   '_store_rows' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  1.153s
+(log:75) DEBUG:@wrap:🍇  ❮_❮_❮_❮_❮_❮_ '_load_json' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯ 🍇   '_load_json' Ended 🐘  tot. mem.: 322 MB  𝞓: 25 MB ⏱  0.612s
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯ 🍂   'get_payees' Ended 🐘  tot. mem.: 322 MB  𝞓: 25 MB ⏱  1.769s
+(log:75) DEBUG:@wrap:🌶  ❮_❮_❮_❮_❮_ 'inner_join' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯ 🌶   'inner_join' Ended 🐘  tot. mem.: 322 MB  𝞓: 0 MB ⏱  0.016s
+(log:75) DEBUG:@wrap:🌺  ❮_❮_❮_❮_❮_ 'get_contracts_meta' Started
+(datamanager:693) DEBUG:@get_contracts_meta:get_contracts_meta
+(log:75) DEBUG:@wrap:🌻  ❮_❮_❮_❮_❮_❮_ '_store_rows' Started
+(datamanager:88) DEBUG:@_store_rows:_store_rows: /home/revelator/statement-engine/log/cache/matcher/contracts_meta_2021-03-26.json
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯ 🌻   '_store_rows' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  1.753s
+(log:75) DEBUG:@wrap:🍇  ❮_❮_❮_❮_❮_❮_ '_load_json' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯ 🍇   '_load_json' Ended 🐘  tot. mem.: 351 MB  𝞓: 54 MB ⏱  0.890s
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯ 🌺   'get_contracts_meta' Ended 🐘  tot. mem.: 351 MB  𝞓: 54 MB ⏱  2.646s
+(log:75) DEBUG:@wrap:🌶  ❮_❮_❮_❮_❮_ 'inner_join' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯ 🌶   'inner_join' Ended 🐘  tot. mem.: 351 MB  𝞓: 0 MB ⏱  0.002s
+(log:75) DEBUG:@wrap:🌶  ❮_❮_❮_❮_❮_ 'inner_join' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯ 🌶   'inner_join' Ended 🐘  tot. mem.: 351 MB  𝞓: 0 MB ⏱  0.031s
+(log:75) DEBUG:@wrap:🌶  ❮_❮_❮_❮_❮_ 'inner_join' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯ 🌶   'inner_join' Ended 🐘  tot. mem.: 351 MB  𝞓: 0 MB ⏱  0.003s
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯ 🍁   '_get_payee_balances' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  4.499s
+(statement:692) DEBUG:@match_statements:✅ finished match_statements: 860
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🌻   'match_statements' Ended 🐘  tot. mem.: 297 MB  𝞓: 237 MB ⏱  114.251s
+(log:75) DEBUG:@wrap:🌼  ❮_❮_❮_ 'set_queue_id' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🌼   'set_queue_id' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.000s
+(log:75) DEBUG:@wrap:🍄  ❮_❮_❮_ '_generate_mechanicals_statement' Started
+(log:75) DEBUG:@wrap:🌵  ❮_❮_❮_❮_ 'inner_join_w_missing' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯ 🌵   'inner_join_w_missing' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.259s
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🍄   '_generate_mechanicals_statement' Ended 🐘  tot. mem.: 296 MB  𝞓: -1 MB ⏱  0.293s
+(log:75) DEBUG:@wrap:🌴  ❮_❮_❮_ 'set_mechanicals' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🌴   'set_mechanicals' Ended 🐘  tot. mem.: 296 MB  𝞓: 0 MB ⏱  0.003s
+(log:75) DEBUG:@wrap:🌴  ❮_❮_❮_ '_generate_statement_per_payee' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🌴   '_generate_statement_per_payee' Ended 🐘  tot. mem.: 296 MB  𝞓: 0 MB ⏱  0.000s
+(log:75) DEBUG:@wrap:🍀  ❮_❮_❮_ '_get_payee_balances' Started
+(statement:420) DEBUG:@_get_payee_balances:>> _get_payee_balances
+(log:75) DEBUG:@wrap:🍁  ❮_❮_❮_❮_ 'get_payees' Started
+(datamanager:705) DEBUG:@get_payees:get_payees
+(log:75) DEBUG:@wrap:🍆  ❮_❮_❮_❮_❮_ '_load_json' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯ 🍆   '_load_json' Ended 🐘  tot. mem.: 322 MB  𝞓: 26 MB ⏱  0.615s
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯ 🍁   'get_payees' Ended 🐘  tot. mem.: 322 MB  𝞓: 26 MB ⏱  0.615s
+(log:75) DEBUG:@wrap:🌵  ❮_❮_❮_❮_ 'inner_join' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯ 🌵   'inner_join' Ended 🐘  tot. mem.: 322 MB  𝞓: 0 MB ⏱  0.017s
+(log:75) DEBUG:@wrap:🌹  ❮_❮_❮_❮_ 'get_contracts_meta' Started
+(datamanager:693) DEBUG:@get_contracts_meta:get_contracts_meta
+(log:75) DEBUG:@wrap:🍆  ❮_❮_❮_❮_❮_ '_load_json' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯ 🍆   '_load_json' Ended 🐘  tot. mem.: 351 MB  𝞓: 54 MB ⏱  0.908s
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯ 🌹   'get_contracts_meta' Ended 🐘  tot. mem.: 351 MB  𝞓: 54 MB ⏱  0.908s
+(log:75) DEBUG:@wrap:🌵  ❮_❮_❮_❮_ 'inner_join' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯ 🌵   'inner_join' Ended 🐘  tot. mem.: 351 MB  𝞓: 0 MB ⏱  0.002s
+(log:75) DEBUG:@wrap:🌵  ❮_❮_❮_❮_ 'inner_join' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯ 🌵   'inner_join' Ended 🐘  tot. mem.: 351 MB  𝞓: 0 MB ⏱  0.030s
+(log:75) DEBUG:@wrap:🌵  ❮_❮_❮_❮_ 'inner_join' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯ 🌵   'inner_join' Ended 🐘  tot. mem.: 351 MB  𝞓: 0 MB ⏱  0.003s
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🍀   '_get_payee_balances' Ended 🐘  tot. mem.: 297 MB  𝞓: 1 MB ⏱  1.626s
+(statement:482) DEBUG:@_generate_statement_per_payee:processed 0 out of 41
+(log:75) DEBUG:@wrap:🍀  ❮_❮_❮_ '_rename_columns' Started
+(statement:338) DEBUG:@_rename_columns:>> _rename_columns: USD 1
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🍀   '_rename_columns' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.001s
+(log:75) DEBUG:@wrap:🍀  ❮_❮_❮_ 'get_contracts_name' Started
+(datamanager:390) DEBUG:@get_contracts_name:get_contracts_name
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🍀   'get_contracts_name' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.003s
+(log:75) DEBUG:@wrap:🌼  ❮_❮_❮_ 'get_payee_contact_adress' Started
+(datamanager:369) DEBUG:@get_payee_contact_adress:get_payee_contact_adress
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🌼   'get_payee_contact_adress' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.015s
+(log:75) DEBUG:@wrap:🌸  ❮_❮_❮_ 'get_payor_image_id' Started
+(datamanager:383) DEBUG:@get_payor_image_id:get_payor_image_id
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🌸   'get_payor_image_id' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.004s
+(log:75) DEBUG:@wrap:🍀  ❮_❮_❮_ '_rename_columns' Started
+(statement:338) DEBUG:@_rename_columns:>> _rename_columns: USD 1
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🍀   '_rename_columns' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.001s
+(log:75) DEBUG:@wrap:🍀  ❮_❮_❮_ 'get_contracts_name' Started
+(datamanager:390) DEBUG:@get_contracts_name:get_contracts_name
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🍀   'get_contracts_name' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.001s
+(log:75) DEBUG:@wrap:🌼  ❮_❮_❮_ 'get_payee_contact_adress' Started
+(datamanager:369) DEBUG:@get_payee_contact_adress:get_payee_contact_adress
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🌼   'get_payee_contact_adress' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.015s
+(log:75) DEBUG:@wrap:🌸  ❮_❮_❮_ 'get_payor_image_id' Started
+(datamanager:383) DEBUG:@get_payor_image_id:get_payor_image_id
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🌸   'get_payor_image_id' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.002s
+(log:75) DEBUG:@wrap:🍀  ❮_❮_❮_ '_rename_columns' Started
+(statement:338) DEBUG:@_rename_columns:>> _rename_columns: USD 1
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🍀   '_rename_columns' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.001s
+(log:75) DEBUG:@wrap:🍀  ❮_❮_❮_ 'get_contracts_name' Started
+(datamanager:390) DEBUG:@get_contracts_name:get_contracts_name
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🍀   'get_contracts_name' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.001s
+(log:75) DEBUG:@wrap:🌼  ❮_❮_❮_ 'get_payee_contact_adress' Started
+(datamanager:369) DEBUG:@get_payee_contact_adress:get_payee_contact_adress
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🌼   'get_payee_contact_adress' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.015s
+(log:75) DEBUG:@wrap:🌸  ❮_❮_❮_ 'get_payor_image_id' Started
+(datamanager:383) DEBUG:@get_payor_image_id:get_payor_image_id
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🌸   'get_payor_image_id' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.001s
+(log:75) DEBUG:@wrap:🍀  ❮_❮_❮_ '_rename_columns' Started
+(statement:338) DEBUG:@_rename_columns:>> _rename_columns: USD 1
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🍀   '_rename_columns' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.001s
+(log:75) DEBUG:@wrap:🍀  ❮_❮_❮_ 'get_contracts_name' Started
+(datamanager:390) DEBUG:@get_contracts_name:get_contracts_name
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🍀   'get_contracts_name' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.001s
+(log:75) DEBUG:@wrap:🌼  ❮_❮_❮_ 'get_payee_contact_adress' Started
+(datamanager:369) DEBUG:@get_payee_contact_adress:get_payee_contact_adress
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🌼   'get_payee_contact_adress' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.014s
+(log:75) DEBUG:@wrap:🌸  ❮_❮_❮_ 'get_payor_image_id' Started
+(datamanager:383) DEBUG:@get_payor_image_id:get_payor_image_id
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🌸   'get_payor_image_id' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.001s
+(log:75) DEBUG:@wrap:🍀  ❮_❮_❮_ '_rename_columns' Started
+(statement:338) DEBUG:@_rename_columns:>> _rename_columns: USD 1
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🍀   '_rename_columns' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.002s
+(log:75) DEBUG:@wrap:🍀  ❮_❮_❮_ 'get_contracts_name' Started
+(datamanager:390) DEBUG:@get_contracts_name:get_contracts_name
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🍀   'get_contracts_name' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.001s
+(log:75) DEBUG:@wrap:🌼  ❮_❮_❮_ 'get_payee_contact_adress' Started
+(datamanager:369) DEBUG:@get_payee_contact_adress:get_payee_contact_adress
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🌼   'get_payee_contact_adress' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.015s
+(log:75) DEBUG:@wrap:🌸  ❮_❮_❮_ 'get_payor_image_id' Started
+(datamanager:383) DEBUG:@get_payor_image_id:get_payor_image_id
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🌸   'get_payor_image_id' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.001s
+(log:75) DEBUG:@wrap:🍀  ❮_❮_❮_ '_rename_columns' Started
+(statement:338) DEBUG:@_rename_columns:>> _rename_columns: USD 1
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🍀   '_rename_columns' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.001s
+(log:75) DEBUG:@wrap:🍀  ❮_❮_❮_ 'get_contracts_name' Started
+(datamanager:390) DEBUG:@get_contracts_name:get_contracts_name
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🍀   'get_contracts_name' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.001s
+(log:75) DEBUG:@wrap:🌼  ❮_❮_❮_ 'get_payee_contact_adress' Started
+(datamanager:369) DEBUG:@get_payee_contact_adress:get_payee_contact_adress
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🌼   'get_payee_contact_adress' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.015s
+(log:75) DEBUG:@wrap:🌸  ❮_❮_❮_ 'get_payor_image_id' Started
+(datamanager:383) DEBUG:@get_payor_image_id:get_payor_image_id
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🌸   'get_payor_image_id' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.001s
+(log:75) DEBUG:@wrap:🍀  ❮_❮_❮_ '_rename_columns' Started
+(statement:338) DEBUG:@_rename_columns:>> _rename_columns: USD 1
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🍀   '_rename_columns' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.001s
+(log:75) DEBUG:@wrap:🍀  ❮_❮_❮_ 'get_contracts_name' Started
+(datamanager:390) DEBUG:@get_contracts_name:get_contracts_name
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🍀   'get_contracts_name' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.001s
+(log:75) DEBUG:@wrap:🌼  ❮_❮_❮_ 'get_payee_contact_adress' Started
+(datamanager:369) DEBUG:@get_payee_contact_adress:get_payee_contact_adress
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🌼   'get_payee_contact_adress' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.015s
+(log:75) DEBUG:@wrap:🌸  ❮_❮_❮_ 'get_payor_image_id' Started
+(datamanager:383) DEBUG:@get_payor_image_id:get_payor_image_id
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🌸   'get_payor_image_id' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.001s
+(log:75) DEBUG:@wrap:🍀  ❮_❮_❮_ '_rename_columns' Started
+(statement:338) DEBUG:@_rename_columns:>> _rename_columns: USD 1
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🍀   '_rename_columns' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.001s
+(log:75) DEBUG:@wrap:🍀  ❮_❮_❮_ 'get_contracts_name' Started
+(datamanager:390) DEBUG:@get_contracts_name:get_contracts_name
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🍀   'get_contracts_name' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.001s
+(log:75) DEBUG:@wrap:🌼  ❮_❮_❮_ 'get_payee_contact_adress' Started
+(datamanager:369) DEBUG:@get_payee_contact_adress:get_payee_contact_adress
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🌼   'get_payee_contact_adress' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.014s
+(log:75) DEBUG:@wrap:🌸  ❮_❮_❮_ 'get_payor_image_id' Started
+(datamanager:383) DEBUG:@get_payor_image_id:get_payor_image_id
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🌸   'get_payor_image_id' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.002s
+(log:75) DEBUG:@wrap:🍀  ❮_❮_❮_ '_rename_columns' Started
+(statement:338) DEBUG:@_rename_columns:>> _rename_columns: USD 1
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🍀   '_rename_columns' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.000s
+(log:75) DEBUG:@wrap:🍀  ❮_❮_❮_ 'get_contracts_name' Started
+(datamanager:390) DEBUG:@get_contracts_name:get_contracts_name
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🍀   'get_contracts_name' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.001s
+(log:75) DEBUG:@wrap:🌼  ❮_❮_❮_ 'get_payee_contact_adress' Started
+(datamanager:369) DEBUG:@get_payee_contact_adress:get_payee_contact_adress
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🌼   'get_payee_contact_adress' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.014s
+(log:75) DEBUG:@wrap:🌸  ❮_❮_❮_ 'get_payor_image_id' Started
+(datamanager:383) DEBUG:@get_payor_image_id:get_payor_image_id
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🌸   'get_payor_image_id' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.001s
+(log:75) DEBUG:@wrap:🍀  ❮_❮_❮_ '_rename_columns' Started
+(statement:338) DEBUG:@_rename_columns:>> _rename_columns: USD 1
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🍀   '_rename_columns' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.000s
+(log:75) DEBUG:@wrap:🍀  ❮_❮_❮_ 'get_contracts_name' Started
+(datamanager:390) DEBUG:@get_contracts_name:get_contracts_name
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🍀   'get_contracts_name' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.001s
+(log:75) DEBUG:@wrap:🌼  ❮_❮_❮_ 'get_payee_contact_adress' Started
+(datamanager:369) DEBUG:@get_payee_contact_adress:get_payee_contact_adress
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🌼   'get_payee_contact_adress' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.014s
+(log:75) DEBUG:@wrap:🌸  ❮_❮_❮_ 'get_payor_image_id' Started
+(datamanager:383) DEBUG:@get_payor_image_id:get_payor_image_id
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🌸   'get_payor_image_id' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.002s
+(log:75) DEBUG:@wrap:🍀  ❮_❮_❮_ '_rename_columns' Started
+(statement:338) DEBUG:@_rename_columns:>> _rename_columns: USD 1
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🍀   '_rename_columns' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.001s
+(log:75) DEBUG:@wrap:🍀  ❮_❮_❮_ 'get_contracts_name' Started
+(datamanager:390) DEBUG:@get_contracts_name:get_contracts_name
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🍀   'get_contracts_name' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.001s
+(log:75) DEBUG:@wrap:🌼  ❮_❮_❮_ 'get_payee_contact_adress' Started
+(datamanager:369) DEBUG:@get_payee_contact_adress:get_payee_contact_adress
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🌼   'get_payee_contact_adress' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.015s
+(log:75) DEBUG:@wrap:🌸  ❮_❮_❮_ 'get_payor_image_id' Started
+(datamanager:383) DEBUG:@get_payor_image_id:get_payor_image_id
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🌸   'get_payor_image_id' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.001s
+(log:75) DEBUG:@wrap:🍀  ❮_❮_❮_ '_rename_columns' Started
+(statement:338) DEBUG:@_rename_columns:>> _rename_columns: USD 1
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🍀   '_rename_columns' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.000s
+(log:75) DEBUG:@wrap:🍀  ❮_❮_❮_ 'get_contracts_name' Started
+(datamanager:390) DEBUG:@get_contracts_name:get_contracts_name
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🍀   'get_contracts_name' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.001s
+(log:75) DEBUG:@wrap:🌼  ❮_❮_❮_ 'get_payee_contact_adress' Started
+(datamanager:369) DEBUG:@get_payee_contact_adress:get_payee_contact_adress
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🌼   'get_payee_contact_adress' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.014s
+(log:75) DEBUG:@wrap:🌸  ❮_❮_❮_ 'get_payor_image_id' Started
+(datamanager:383) DEBUG:@get_payor_image_id:get_payor_image_id
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🌸   'get_payor_image_id' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.001s
+(log:75) DEBUG:@wrap:🍀  ❮_❮_❮_ '_rename_columns' Started
+(statement:338) DEBUG:@_rename_columns:>> _rename_columns: USD 1
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🍀   '_rename_columns' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.000s
+(log:75) DEBUG:@wrap:🍀  ❮_❮_❮_ 'get_contracts_name' Started
+(datamanager:390) DEBUG:@get_contracts_name:get_contracts_name
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🍀   'get_contracts_name' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.001s
+(log:75) DEBUG:@wrap:🌼  ❮_❮_❮_ 'get_payee_contact_adress' Started
+(datamanager:369) DEBUG:@get_payee_contact_adress:get_payee_contact_adress
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🌼   'get_payee_contact_adress' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.014s
+(log:75) DEBUG:@wrap:🌸  ❮_❮_❮_ 'get_payor_image_id' Started
+(datamanager:383) DEBUG:@get_payor_image_id:get_payor_image_id
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🌸   'get_payor_image_id' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.001s
+(log:75) DEBUG:@wrap:🍀  ❮_❮_❮_ '_rename_columns' Started
+(statement:338) DEBUG:@_rename_columns:>> _rename_columns: USD 1
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🍀   '_rename_columns' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.000s
+(log:75) DEBUG:@wrap:🍀  ❮_❮_❮_ 'get_contracts_name' Started
+(datamanager:390) DEBUG:@get_contracts_name:get_contracts_name
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🍀   'get_contracts_name' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.001s
+(log:75) DEBUG:@wrap:🌼  ❮_❮_❮_ 'get_payee_contact_adress' Started
+(datamanager:369) DEBUG:@get_payee_contact_adress:get_payee_contact_adress
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🌼   'get_payee_contact_adress' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.014s
+(log:75) DEBUG:@wrap:🌸  ❮_❮_❮_ 'get_payor_image_id' Started
+(datamanager:383) DEBUG:@get_payor_image_id:get_payor_image_id
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🌸   'get_payor_image_id' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.001s
+(log:75) DEBUG:@wrap:🍀  ❮_❮_❮_ '_rename_columns' Started
+(statement:338) DEBUG:@_rename_columns:>> _rename_columns: USD 1
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🍀   '_rename_columns' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.001s
+(log:75) DEBUG:@wrap:🍀  ❮_❮_❮_ 'get_contracts_name' Started
+(datamanager:390) DEBUG:@get_contracts_name:get_contracts_name
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🍀   'get_contracts_name' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.001s
+(log:75) DEBUG:@wrap:🌼  ❮_❮_❮_ 'get_payee_contact_adress' Started
+(datamanager:369) DEBUG:@get_payee_contact_adress:get_payee_contact_adress
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🌼   'get_payee_contact_adress' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.015s
+(log:75) DEBUG:@wrap:🌸  ❮_❮_❮_ 'get_payor_image_id' Started
+(datamanager:383) DEBUG:@get_payor_image_id:get_payor_image_id
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🌸   'get_payor_image_id' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.002s
+(log:75) DEBUG:@wrap:🍀  ❮_❮_❮_ '_rename_columns' Started
+(statement:338) DEBUG:@_rename_columns:>> _rename_columns: USD 1
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🍀   '_rename_columns' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.000s
+(log:75) DEBUG:@wrap:🍀  ❮_❮_❮_ 'get_contracts_name' Started
+(datamanager:390) DEBUG:@get_contracts_name:get_contracts_name
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🍀   'get_contracts_name' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.001s
+(log:75) DEBUG:@wrap:🌼  ❮_❮_❮_ 'get_payee_contact_adress' Started
+(datamanager:369) DEBUG:@get_payee_contact_adress:get_payee_contact_adress
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🌼   'get_payee_contact_adress' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.015s
+(log:75) DEBUG:@wrap:🌸  ❮_❮_❮_ 'get_payor_image_id' Started
+(datamanager:383) DEBUG:@get_payor_image_id:get_payor_image_id
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🌸   'get_payor_image_id' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.001s
+(log:75) DEBUG:@wrap:🍀  ❮_❮_❮_ '_rename_columns' Started
+(statement:338) DEBUG:@_rename_columns:>> _rename_columns: USD 1
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🍀   '_rename_columns' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.000s
+(log:75) DEBUG:@wrap:🍀  ❮_❮_❮_ 'get_contracts_name' Started
+(datamanager:390) DEBUG:@get_contracts_name:get_contracts_name
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🍀   'get_contracts_name' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.001s
+(log:75) DEBUG:@wrap:🌼  ❮_❮_❮_ 'get_payee_contact_adress' Started
+(datamanager:369) DEBUG:@get_payee_contact_adress:get_payee_contact_adress
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🌼   'get_payee_contact_adress' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.014s
+(log:75) DEBUG:@wrap:🌸  ❮_❮_❮_ 'get_payor_image_id' Started
+(datamanager:383) DEBUG:@get_payor_image_id:get_payor_image_id
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🌸   'get_payor_image_id' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.001s
+(log:75) DEBUG:@wrap:🍀  ❮_❮_❮_ '_rename_columns' Started
+(statement:338) DEBUG:@_rename_columns:>> _rename_columns: USD 1
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🍀   '_rename_columns' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.000s
+(log:75) DEBUG:@wrap:🍀  ❮_❮_❮_ 'get_contracts_name' Started
+(datamanager:390) DEBUG:@get_contracts_name:get_contracts_name
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🍀   'get_contracts_name' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.001s
+(log:75) DEBUG:@wrap:🌼  ❮_❮_❮_ 'get_payee_contact_adress' Started
+(datamanager:369) DEBUG:@get_payee_contact_adress:get_payee_contact_adress
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🌼   'get_payee_contact_adress' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.016s
+(log:75) DEBUG:@wrap:🌸  ❮_❮_❮_ 'get_payor_image_id' Started
+(datamanager:383) DEBUG:@get_payor_image_id:get_payor_image_id
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🌸   'get_payor_image_id' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.001s
+(log:75) DEBUG:@wrap:🍀  ❮_❮_❮_ '_rename_columns' Started
+(statement:338) DEBUG:@_rename_columns:>> _rename_columns: USD 1
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🍀   '_rename_columns' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.000s
+(log:75) DEBUG:@wrap:🍀  ❮_❮_❮_ 'get_contracts_name' Started
+(datamanager:390) DEBUG:@get_contracts_name:get_contracts_name
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🍀   'get_contracts_name' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.001s
+(log:75) DEBUG:@wrap:🌼  ❮_❮_❮_ 'get_payee_contact_adress' Started
+(datamanager:369) DEBUG:@get_payee_contact_adress:get_payee_contact_adress
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🌼   'get_payee_contact_adress' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.014s
+(log:75) DEBUG:@wrap:🌸  ❮_❮_❮_ 'get_payor_image_id' Started
+(datamanager:383) DEBUG:@get_payor_image_id:get_payor_image_id
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🌸   'get_payor_image_id' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.002s
+(log:75) DEBUG:@wrap:🍀  ❮_❮_❮_ '_rename_columns' Started
+(statement:338) DEBUG:@_rename_columns:>> _rename_columns: USD 1
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🍀   '_rename_columns' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.000s
+(log:75) DEBUG:@wrap:🍀  ❮_❮_❮_ 'get_contracts_name' Started
+(datamanager:390) DEBUG:@get_contracts_name:get_contracts_name
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🍀   'get_contracts_name' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.001s
+(log:75) DEBUG:@wrap:🌼  ❮_❮_❮_ 'get_payee_contact_adress' Started
+(datamanager:369) DEBUG:@get_payee_contact_adress:get_payee_contact_adress
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🌼   'get_payee_contact_adress' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.015s
+(log:75) DEBUG:@wrap:🌸  ❮_❮_❮_ 'get_payor_image_id' Started
+(datamanager:383) DEBUG:@get_payor_image_id:get_payor_image_id
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🌸   'get_payor_image_id' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.002s
+(log:75) DEBUG:@wrap:🍀  ❮_❮_❮_ '_rename_columns' Started
+(statement:338) DEBUG:@_rename_columns:>> _rename_columns: USD 1
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🍀   '_rename_columns' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.000s
+(log:75) DEBUG:@wrap:🍀  ❮_❮_❮_ 'get_contracts_name' Started
+(datamanager:390) DEBUG:@get_contracts_name:get_contracts_name
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🍀   'get_contracts_name' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.001s
+(log:75) DEBUG:@wrap:🌼  ❮_❮_❮_ 'get_payee_contact_adress' Started
+(datamanager:369) DEBUG:@get_payee_contact_adress:get_payee_contact_adress
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🌼   'get_payee_contact_adress' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.015s
+(log:75) DEBUG:@wrap:🌸  ❮_❮_❮_ 'get_payor_image_id' Started
+(datamanager:383) DEBUG:@get_payor_image_id:get_payor_image_id
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🌸   'get_payor_image_id' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.001s
+(log:75) DEBUG:@wrap:🍀  ❮_❮_❮_ '_rename_columns' Started
+(statement:338) DEBUG:@_rename_columns:>> _rename_columns: USD 1
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🍀   '_rename_columns' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.000s
+(log:75) DEBUG:@wrap:🍀  ❮_❮_❮_ 'get_contracts_name' Started
+(datamanager:390) DEBUG:@get_contracts_name:get_contracts_name
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🍀   'get_contracts_name' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.001s
+(log:75) DEBUG:@wrap:🌼  ❮_❮_❮_ 'get_payee_contact_adress' Started
+(datamanager:369) DEBUG:@get_payee_contact_adress:get_payee_contact_adress
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🌼   'get_payee_contact_adress' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.015s
+(log:75) DEBUG:@wrap:🌸  ❮_❮_❮_ 'get_payor_image_id' Started
+(datamanager:383) DEBUG:@get_payor_image_id:get_payor_image_id
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🌸   'get_payor_image_id' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.001s
+(log:75) DEBUG:@wrap:🍀  ❮_❮_❮_ '_rename_columns' Started
+(statement:338) DEBUG:@_rename_columns:>> _rename_columns: USD 1
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🍀   '_rename_columns' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.000s
+(log:75) DEBUG:@wrap:🍀  ❮_❮_❮_ 'get_contracts_name' Started
+(datamanager:390) DEBUG:@get_contracts_name:get_contracts_name
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🍀   'get_contracts_name' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.001s
+(log:75) DEBUG:@wrap:🌼  ❮_❮_❮_ 'get_payee_contact_adress' Started
+(datamanager:369) DEBUG:@get_payee_contact_adress:get_payee_contact_adress
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🌼   'get_payee_contact_adress' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.014s
+(log:75) DEBUG:@wrap:🌸  ❮_❮_❮_ 'get_payor_image_id' Started
+(datamanager:383) DEBUG:@get_payor_image_id:get_payor_image_id
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🌸   'get_payor_image_id' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.002s
+(log:75) DEBUG:@wrap:🍀  ❮_❮_❮_ '_rename_columns' Started
+(statement:338) DEBUG:@_rename_columns:>> _rename_columns: USD 1
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🍀   '_rename_columns' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.000s
+(log:75) DEBUG:@wrap:🍀  ❮_❮_❮_ 'get_contracts_name' Started
+(datamanager:390) DEBUG:@get_contracts_name:get_contracts_name
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🍀   'get_contracts_name' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.001s
+(log:75) DEBUG:@wrap:🌼  ❮_❮_❮_ 'get_payee_contact_adress' Started
+(datamanager:369) DEBUG:@get_payee_contact_adress:get_payee_contact_adress
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🌼   'get_payee_contact_adress' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.014s
+(log:75) DEBUG:@wrap:🌸  ❮_❮_❮_ 'get_payor_image_id' Started
+(datamanager:383) DEBUG:@get_payor_image_id:get_payor_image_id
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🌸   'get_payor_image_id' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.001s
+(log:75) DEBUG:@wrap:🍀  ❮_❮_❮_ '_rename_columns' Started
+(statement:338) DEBUG:@_rename_columns:>> _rename_columns: USD 1
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🍀   '_rename_columns' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.000s
+(log:75) DEBUG:@wrap:🍀  ❮_❮_❮_ 'get_contracts_name' Started
+(datamanager:390) DEBUG:@get_contracts_name:get_contracts_name
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🍀   'get_contracts_name' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.004s
+(log:75) DEBUG:@wrap:🌼  ❮_❮_❮_ 'get_payee_contact_adress' Started
+(datamanager:369) DEBUG:@get_payee_contact_adress:get_payee_contact_adress
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🌼   'get_payee_contact_adress' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.015s
+(log:75) DEBUG:@wrap:🌸  ❮_❮_❮_ 'get_payor_image_id' Started
+(datamanager:383) DEBUG:@get_payor_image_id:get_payor_image_id
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🌸   'get_payor_image_id' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.001s
+(log:75) DEBUG:@wrap:🍀  ❮_❮_❮_ '_rename_columns' Started
+(statement:338) DEBUG:@_rename_columns:>> _rename_columns: USD 1
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🍀   '_rename_columns' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.000s
+(log:75) DEBUG:@wrap:🍀  ❮_❮_❮_ 'get_contracts_name' Started
+(datamanager:390) DEBUG:@get_contracts_name:get_contracts_name
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🍀   'get_contracts_name' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.001s
+(log:75) DEBUG:@wrap:🌼  ❮_❮_❮_ 'get_payee_contact_adress' Started
+(datamanager:369) DEBUG:@get_payee_contact_adress:get_payee_contact_adress
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🌼   'get_payee_contact_adress' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.016s
+(log:75) DEBUG:@wrap:🌸  ❮_❮_❮_ 'get_payor_image_id' Started
+(datamanager:383) DEBUG:@get_payor_image_id:get_payor_image_id
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🌸   'get_payor_image_id' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.001s
+(log:75) DEBUG:@wrap:🍀  ❮_❮_❮_ '_rename_columns' Started
+(statement:338) DEBUG:@_rename_columns:>> _rename_columns: USD 1
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🍀   '_rename_columns' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.000s
+(log:75) DEBUG:@wrap:🍀  ❮_❮_❮_ 'get_contracts_name' Started
+(datamanager:390) DEBUG:@get_contracts_name:get_contracts_name
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🍀   'get_contracts_name' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.001s
+(log:75) DEBUG:@wrap:🌼  ❮_❮_❮_ 'get_payee_contact_adress' Started
+(datamanager:369) DEBUG:@get_payee_contact_adress:get_payee_contact_adress
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🌼   'get_payee_contact_adress' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.015s
+(log:75) DEBUG:@wrap:🌸  ❮_❮_❮_ 'get_payor_image_id' Started
+(datamanager:383) DEBUG:@get_payor_image_id:get_payor_image_id
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🌸   'get_payor_image_id' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.002s
+(log:75) DEBUG:@wrap:🍀  ❮_❮_❮_ '_rename_columns' Started
+(statement:338) DEBUG:@_rename_columns:>> _rename_columns: USD 1
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🍀   '_rename_columns' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.000s
+(log:75) DEBUG:@wrap:🍀  ❮_❮_❮_ 'get_contracts_name' Started
+(datamanager:390) DEBUG:@get_contracts_name:get_contracts_name
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🍀   'get_contracts_name' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.001s
+(log:75) DEBUG:@wrap:🌼  ❮_❮_❮_ 'get_payee_contact_adress' Started
+(datamanager:369) DEBUG:@get_payee_contact_adress:get_payee_contact_adress
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🌼   'get_payee_contact_adress' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.015s
+(log:75) DEBUG:@wrap:🌸  ❮_❮_❮_ 'get_payor_image_id' Started
+(datamanager:383) DEBUG:@get_payor_image_id:get_payor_image_id
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🌸   'get_payor_image_id' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.001s
+(log:75) DEBUG:@wrap:🍀  ❮_❮_❮_ '_rename_columns' Started
+(statement:338) DEBUG:@_rename_columns:>> _rename_columns: USD 1
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🍀   '_rename_columns' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.000s
+(log:75) DEBUG:@wrap:🍀  ❮_❮_❮_ 'get_contracts_name' Started
+(datamanager:390) DEBUG:@get_contracts_name:get_contracts_name
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🍀   'get_contracts_name' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.001s
+(log:75) DEBUG:@wrap:🌼  ❮_❮_❮_ 'get_payee_contact_adress' Started
+(datamanager:369) DEBUG:@get_payee_contact_adress:get_payee_contact_adress
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🌼   'get_payee_contact_adress' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.014s
+(log:75) DEBUG:@wrap:🌸  ❮_❮_❮_ 'get_payor_image_id' Started
+(datamanager:383) DEBUG:@get_payor_image_id:get_payor_image_id
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🌸   'get_payor_image_id' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.001s
+(log:75) DEBUG:@wrap:🍀  ❮_❮_❮_ '_rename_columns' Started
+(statement:338) DEBUG:@_rename_columns:>> _rename_columns: USD 1
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🍀   '_rename_columns' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.000s
+(log:75) DEBUG:@wrap:🍀  ❮_❮_❮_ 'get_contracts_name' Started
+(datamanager:390) DEBUG:@get_contracts_name:get_contracts_name
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🍀   'get_contracts_name' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.001s
+(log:75) DEBUG:@wrap:🌼  ❮_❮_❮_ 'get_payee_contact_adress' Started
+(datamanager:369) DEBUG:@get_payee_contact_adress:get_payee_contact_adress
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🌼   'get_payee_contact_adress' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.014s
+(log:75) DEBUG:@wrap:🌸  ❮_❮_❮_ 'get_payor_image_id' Started
+(datamanager:383) DEBUG:@get_payor_image_id:get_payor_image_id
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🌸   'get_payor_image_id' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.003s
+(log:75) DEBUG:@wrap:🍀  ❮_❮_❮_ '_rename_columns' Started
+(statement:338) DEBUG:@_rename_columns:>> _rename_columns: USD 1
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🍀   '_rename_columns' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.000s
+(log:75) DEBUG:@wrap:🍀  ❮_❮_❮_ 'get_contracts_name' Started
+(datamanager:390) DEBUG:@get_contracts_name:get_contracts_name
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🍀   'get_contracts_name' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.001s
+(log:75) DEBUG:@wrap:🌼  ❮_❮_❮_ 'get_payee_contact_adress' Started
+(datamanager:369) DEBUG:@get_payee_contact_adress:get_payee_contact_adress
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🌼   'get_payee_contact_adress' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.015s
+(log:75) DEBUG:@wrap:🌸  ❮_❮_❮_ 'get_payor_image_id' Started
+(datamanager:383) DEBUG:@get_payor_image_id:get_payor_image_id
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🌸   'get_payor_image_id' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.001s
+(log:75) DEBUG:@wrap:🍀  ❮_❮_❮_ '_rename_columns' Started
+(statement:338) DEBUG:@_rename_columns:>> _rename_columns: USD 1
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🍀   '_rename_columns' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.000s
+(log:75) DEBUG:@wrap:🍀  ❮_❮_❮_ 'get_contracts_name' Started
+(datamanager:390) DEBUG:@get_contracts_name:get_contracts_name
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🍀   'get_contracts_name' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.001s
+(log:75) DEBUG:@wrap:🌼  ❮_❮_❮_ 'get_payee_contact_adress' Started
+(datamanager:369) DEBUG:@get_payee_contact_adress:get_payee_contact_adress
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🌼   'get_payee_contact_adress' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.015s
+(log:75) DEBUG:@wrap:🌸  ❮_❮_❮_ 'get_payor_image_id' Started
+(datamanager:383) DEBUG:@get_payor_image_id:get_payor_image_id
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🌸   'get_payor_image_id' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.002s
+(log:75) DEBUG:@wrap:🍀  ❮_❮_❮_ '_rename_columns' Started
+(statement:338) DEBUG:@_rename_columns:>> _rename_columns: USD 1
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🍀   '_rename_columns' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.000s
+(log:75) DEBUG:@wrap:🍀  ❮_❮_❮_ 'get_contracts_name' Started
+(datamanager:390) DEBUG:@get_contracts_name:get_contracts_name
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🍀   'get_contracts_name' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.001s
+(log:75) DEBUG:@wrap:🌼  ❮_❮_❮_ 'get_payee_contact_adress' Started
+(datamanager:369) DEBUG:@get_payee_contact_adress:get_payee_contact_adress
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🌼   'get_payee_contact_adress' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.015s
+(log:75) DEBUG:@wrap:🌸  ❮_❮_❮_ 'get_payor_image_id' Started
+(datamanager:383) DEBUG:@get_payor_image_id:get_payor_image_id
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🌸   'get_payor_image_id' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.001s
+(log:75) DEBUG:@wrap:🍀  ❮_❮_❮_ '_rename_columns' Started
+(statement:338) DEBUG:@_rename_columns:>> _rename_columns: USD 1
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🍀   '_rename_columns' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.001s
+(log:75) DEBUG:@wrap:🍀  ❮_❮_❮_ 'get_contracts_name' Started
+(datamanager:390) DEBUG:@get_contracts_name:get_contracts_name
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🍀   'get_contracts_name' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.004s
+(log:75) DEBUG:@wrap:🌼  ❮_❮_❮_ 'get_payee_contact_adress' Started
+(datamanager:369) DEBUG:@get_payee_contact_adress:get_payee_contact_adress
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🌼   'get_payee_contact_adress' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.015s
+(log:75) DEBUG:@wrap:🌸  ❮_❮_❮_ 'get_payor_image_id' Started
+(datamanager:383) DEBUG:@get_payor_image_id:get_payor_image_id
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🌸   'get_payor_image_id' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.001s
+(log:75) DEBUG:@wrap:🍀  ❮_❮_❮_ '_rename_columns' Started
+(statement:338) DEBUG:@_rename_columns:>> _rename_columns: USD 1
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🍀   '_rename_columns' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.000s
+(log:75) DEBUG:@wrap:🍀  ❮_❮_❮_ 'get_contracts_name' Started
+(datamanager:390) DEBUG:@get_contracts_name:get_contracts_name
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🍀   'get_contracts_name' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.001s
+(log:75) DEBUG:@wrap:🌼  ❮_❮_❮_ 'get_payee_contact_adress' Started
+(datamanager:369) DEBUG:@get_payee_contact_adress:get_payee_contact_adress
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🌼   'get_payee_contact_adress' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.014s
+(log:75) DEBUG:@wrap:🌸  ❮_❮_❮_ 'get_payor_image_id' Started
+(datamanager:383) DEBUG:@get_payor_image_id:get_payor_image_id
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🌸   'get_payor_image_id' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.001s
+(log:75) DEBUG:@wrap:🍀  ❮_❮_❮_ '_rename_columns' Started
+(statement:338) DEBUG:@_rename_columns:>> _rename_columns: USD 1
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🍀   '_rename_columns' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.000s
+(log:75) DEBUG:@wrap:🍀  ❮_❮_❮_ 'get_contracts_name' Started
+(datamanager:390) DEBUG:@get_contracts_name:get_contracts_name
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🍀   'get_contracts_name' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.001s
+(log:75) DEBUG:@wrap:🌼  ❮_❮_❮_ 'get_payee_contact_adress' Started
+(datamanager:369) DEBUG:@get_payee_contact_adress:get_payee_contact_adress
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🌼   'get_payee_contact_adress' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.015s
+(log:75) DEBUG:@wrap:🌸  ❮_❮_❮_ 'get_payor_image_id' Started
+(datamanager:383) DEBUG:@get_payor_image_id:get_payor_image_id
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🌸   'get_payor_image_id' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.002s
+(log:75) DEBUG:@wrap:🍀  ❮_❮_❮_ '_rename_columns' Started
+(statement:338) DEBUG:@_rename_columns:>> _rename_columns: USD 1
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🍀   '_rename_columns' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.000s
+(log:75) DEBUG:@wrap:🍀  ❮_❮_❮_ 'get_contracts_name' Started
+(datamanager:390) DEBUG:@get_contracts_name:get_contracts_name
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🍀   'get_contracts_name' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.001s
+(log:75) DEBUG:@wrap:🌼  ❮_❮_❮_ 'get_payee_contact_adress' Started
+(datamanager:369) DEBUG:@get_payee_contact_adress:get_payee_contact_adress
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🌼   'get_payee_contact_adress' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.014s
+(log:75) DEBUG:@wrap:🌸  ❮_❮_❮_ 'get_payor_image_id' Started
+(datamanager:383) DEBUG:@get_payor_image_id:get_payor_image_id
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🌸   'get_payor_image_id' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.001s
+(log:75) DEBUG:@wrap:🍀  ❮_❮_❮_ '_rename_columns' Started
+(statement:338) DEBUG:@_rename_columns:>> _rename_columns: USD 1
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🍀   '_rename_columns' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.000s
+(log:75) DEBUG:@wrap:🍀  ❮_❮_❮_ 'get_contracts_name' Started
+(datamanager:390) DEBUG:@get_contracts_name:get_contracts_name
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🍀   'get_contracts_name' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.001s
+(log:75) DEBUG:@wrap:🌼  ❮_❮_❮_ 'get_payee_contact_adress' Started
+(datamanager:369) DEBUG:@get_payee_contact_adress:get_payee_contact_adress
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🌼   'get_payee_contact_adress' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.014s
+(log:75) DEBUG:@wrap:🌸  ❮_❮_❮_ 'get_payor_image_id' Started
+(datamanager:383) DEBUG:@get_payor_image_id:get_payor_image_id
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🌸   'get_payor_image_id' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.002s
+(log:75) DEBUG:@wrap:🍀  ❮_❮_❮_ '_rename_columns' Started
+(statement:338) DEBUG:@_rename_columns:>> _rename_columns: USD 1
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🍀   '_rename_columns' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.000s
+(log:75) DEBUG:@wrap:🍀  ❮_❮_❮_ 'get_contracts_name' Started
+(datamanager:390) DEBUG:@get_contracts_name:get_contracts_name
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🍀   'get_contracts_name' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.001s
+(log:75) DEBUG:@wrap:🌼  ❮_❮_❮_ 'get_payee_contact_adress' Started
+(datamanager:369) DEBUG:@get_payee_contact_adress:get_payee_contact_adress
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🌼   'get_payee_contact_adress' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.014s
+(log:75) DEBUG:@wrap:🌸  ❮_❮_❮_ 'get_payor_image_id' Started
+(datamanager:383) DEBUG:@get_payor_image_id:get_payor_image_id
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🌸   'get_payor_image_id' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.001s
+(log:75) DEBUG:@wrap:🍀  ❮_❮_❮_ '_rename_columns' Started
+(statement:338) DEBUG:@_rename_columns:>> _rename_columns: USD 1
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🍀   '_rename_columns' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.000s
+(log:75) DEBUG:@wrap:🍀  ❮_❮_❮_ 'get_contracts_name' Started
+(datamanager:390) DEBUG:@get_contracts_name:get_contracts_name
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🍀   'get_contracts_name' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.001s
+(log:75) DEBUG:@wrap:🌼  ❮_❮_❮_ 'get_payee_contact_adress' Started
+(datamanager:369) DEBUG:@get_payee_contact_adress:get_payee_contact_adress
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🌼   'get_payee_contact_adress' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.014s
+(log:75) DEBUG:@wrap:🌸  ❮_❮_❮_ 'get_payor_image_id' Started
+(datamanager:383) DEBUG:@get_payor_image_id:get_payor_image_id
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🌸   'get_payor_image_id' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.001s
+(log:75) DEBUG:@wrap:🍀  ❮_❮_❮_ '_rename_columns' Started
+(statement:338) DEBUG:@_rename_columns:>> _rename_columns: USD 1
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🍀   '_rename_columns' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.000s
+(log:75) DEBUG:@wrap:🍀  ❮_❮_❮_ 'get_contracts_name' Started
+(datamanager:390) DEBUG:@get_contracts_name:get_contracts_name
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🍀   'get_contracts_name' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.001s
+(log:75) DEBUG:@wrap:🌼  ❮_❮_❮_ 'get_payee_contact_adress' Started
+(datamanager:369) DEBUG:@get_payee_contact_adress:get_payee_contact_adress
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🌼   'get_payee_contact_adress' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.014s
+(log:75) DEBUG:@wrap:🌸  ❮_❮_❮_ 'get_payor_image_id' Started
+(datamanager:383) DEBUG:@get_payor_image_id:get_payor_image_id
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🌸   'get_payor_image_id' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.001s
+(log:75) DEBUG:@wrap:🌴  ❮_❮_❮_ 'export' Started
+(log:75) DEBUG:@wrap:🍁  ❮_❮_❮_❮_ '_rename_columns' Started
+(statement:338) DEBUG:@_rename_columns:>> _rename_columns: USD 1
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯ 🍁   '_rename_columns' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.000s
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🌴   'export' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.009s
+(log:75) DEBUG:@wrap:🌸  ❮_❮_❮_ 'create_empty_statements' Started
+(statement:786) DEBUG:@create_empty_statements:>> create_empty_statements: 860
+(statement:798) DEBUG:@create_empty_statements:Found enterprises :[282930, 282931, 282932, 282933, 282935, 282937, 282938, 282939, 282941, 282942, 282943, 282944, 282946, 282947, 282948, 282951, 282953, 282954, 282955, 282956, 282960, 282961, 282962, 282963, 282964, 282965, 282967, 282969, 282970, 282972, 282973, 282975, 282976, 282977, 282980, 282981, 282984, 282987, 282988, 282989, 282990]
+(datamanager:857) DEBUG:@get_payees_by_enterprise:get_payees_by_enterprise  : 282930
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🌸   'create_empty_statements' Ended 🐘  tot. mem.: 297 MB  𝞓: 0 MB ⏱  0.011s
+(log:75) DEBUG:@wrap:🍀  ❮_❮_❮_ '_get_reported_statements' Started
+(statement:173) DEBUG:@_get_reported_statements:>> _get_reported_statements
+(datamanager:907) DEBUG:@get_labels:get_labels
+(log:75) DEBUG:@wrap:🍅  ❮_❮_❮_❮_ '_load_json' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯ 🍅   '_load_json' Ended 🐘  tot. mem.: 336 MB  𝞓: 39 MB ⏱  0.737s
+(log:75) DEBUG:@wrap:🍅  ❮_❮_❮_❮_ 'get_contracts' Started
+(datamanager:677) DEBUG:@get_contracts:get_contracts
+(log:75) DEBUG:@wrap:🍆  ❮_❮_❮_❮_❮_ '_load_json' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯ 🍆   '_load_json' Ended 🐘  tot. mem.: 322 MB  𝞓: 25 MB ⏱  1.981s
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯ 🍅   'get_contracts' Ended 🐘  tot. mem.: 322 MB  𝞓: 25 MB ⏱  1.982s
+(log:75) DEBUG:@wrap:🌵  ❮_❮_❮_❮_ 'inner_join' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯ 🌵   'inner_join' Ended 🐘  tot. mem.: 322 MB  𝞓: 0 MB ⏱  0.068s
+(log:75) DEBUG:@wrap:🌵  ❮_❮_❮_❮_ 'inner_join' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯ 🌵   'inner_join' Ended 🐘  tot. mem.: 322 MB  𝞓: 0 MB ⏱  0.039s
+(log:75) DEBUG:@wrap:🌵  ❮_❮_❮_❮_ 'inner_join' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯ 🌵   'inner_join' Ended 🐘  tot. mem.: 322 MB  𝞓: 0 MB ⏱  0.062s
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🍀   '_get_reported_statements' Ended 🐘  tot. mem.: 322 MB  𝞓: 25 MB ⏱  3.308s
+(statement:1002) WARNING:@generate_statements:Statement files are not being uploaded
+(log:75) DEBUG:@wrap:🌴  ❮_❮_❮_ 'get_status' Started
+(datamanager:360) DEBUG:@get_status:get_status for 860
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🌴   'get_status' Ended 🐘  tot. mem.: 322 MB  𝞓: 0 MB ⏱  0.001s
+(datamanager:425) DEBUG:@generate_only_empty_statements:generate_only_empty_statements: 860 2111==2102
+(statement:1007) DEBUG:@generate_statements:False generate_only_empty_statements: 860
+(log:75) DEBUG:@wrap:🍄  ❮_❮_❮_ 'set_statements' Started
+(datamanager:1073) DEBUG:@set_statements:set_statements: 860, ('2020 Oct 4Q 2020 ORD Royalties', datetime.datetime(2020, 11, 1, 0, 0), 151685, '4F1E75F2-A663-4102-9960-C8987B4E1BA7', 'Silent Roar Productions', 'USD', 1, '648D722E-3D74-4E5B-BD15-FC58C22A2B57')
+(log:75) DEBUG:@wrap:🍁  ❮_❮_❮_❮_ '_get_enterprises' Started
+(datamanager:128) DEBUG:@_get_enterprises:_get_enterprises
+(log:75) DEBUG:@wrap:🌺  ❮_❮_❮_❮_❮_ '_store_rows' Started
+(datamanager:88) DEBUG:@_store_rows:_store_rows: /home/revelator/statement-engine/log/cache/matcher/enterprises2021-03-26.json
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯ 🌺   '_store_rows' Ended 🐘  tot. mem.: 322 MB  𝞓: 0 MB ⏱  1.034s
+(log:75) DEBUG:@wrap:🍆  ❮_❮_❮_❮_❮_ '_load_json' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯ 🍆   '_load_json' Ended 🐘  tot. mem.: 322 MB  𝞓: 0 MB ⏱  0.580s
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯ 🍁   '_get_enterprises' Ended 🐘  tot. mem.: 322 MB  𝞓: 0 MB ⏱  1.639s
+(datamanager:1122) DEBUG:@set_statements:started populating statements at 2021-03-26 14:04:51.107425
+(datamanager:1128) DEBUG:@set_statements:processed 0 out of 41
+(datamanager:1236) DEBUG:@set_statements:started creating file at 2021-03-26 14:05:24.043476
+(datamanager:1300) DEBUG:@set_statements:started uploading file at 2021-03-26 14:05:25.713079
+(datamanager:140) DEBUG:@_upload_temporary_file:>> _upload_temporary_file
+(datamanager:1305) DEBUG:@set_statements:started inserting file at 2021-03-26 14:05:26.201588
+(log:75) DEBUG:@wrap:🌵  ❮_❮_❮_❮_ 'get_status' Started
+(datamanager:360) DEBUG:@get_status:get_status for 860
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯ 🌵   'get_status' Ended 🐘  tot. mem.: 323 MB  𝞓: 0 MB ⏱  0.002s
+(datamanager:425) DEBUG:@generate_only_empty_statements:generate_only_empty_statements: 860 2111==2102
+(datamanager:446) ERROR:@set_system_error:('42000', '[42000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Bulk load data conversion error (type mismatch or invalid character for the specified codepage) for row 1, column 7 (CountryId). (4864) (SQLExecDirectW)')
+(datamanager:170) DEBUG:@_set_queue_status:_set_queue_status: Queue_id : 860, Status : FAILURE, Traceback (most recent call last):
+  File "/mnt/data/revelator/statement-engine/bll/statement.py", line 1008, in generate_statements
+    self._data_manager.set_statements(
+  File "/mnt/data/revelator/statement-engine/utils/log.py", line 76, in wrap
+    value = func(*args, **kwargs)
+  File "/mnt/data/revelator/statement-engine/dal/datamanager.py", line 1326, in set_statements
+    raise e
+  File "/mnt/data/revelator/statement-engine/dal/datamanager.py", line 1311, in set_statements
+    self._cursor.execute(sql)
+pyodbc.ProgrammingError: ('42000', '[42000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Bulk load data conversion error (type mismatch or invalid character for the specified codepage) for row 1, column 7 (CountryId). (4864) (SQLExecDirectW)')
+
+(datamanager:183) DEBUG:@_set_queue_status:SQL : update UserStatementsQueue set status=2111,LastUpdateDate=getdate(),ErrorMessage='Traceback (most recent call last):
+  File "/mnt/data/revelator/statement-engine/bll/statement.py", line 1008, in generate_statements
+    self._data_manager.set_statements(
+  File "/mnt/data/revelator/statement-engine/utils/log.py", line 76, in wrap
+    value = func(*args, **kwargs)
+  File "/mnt/data/revelator/statement-engine/dal/datamanager.py", line 1326, in set_statements
+    raise e
+  File "/mnt/data/revelator/statement-engine/dal/datamanager.py", line 1311, in set_statements
+    self._cursor.execute(sql)
+pyodbc.ProgrammingError: ( 42000 ,  [42000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Bulk load data conversion error (type mismatch or invalid character for the specified codepage) for row 1, column 7 (CountryId). (4864) (SQLExecDirectW) )
+'where UserStatementQueueId=860
+(log:82) DEBUG:@wrap:_❯_❯_❯ 🍂   'generate_statements' Ended 🐘  tot. mem.: 307 MB  𝞓: 247 MB ⏱  159.248s
+(log:75) DEBUG:@wrap:🍄  ❮_❮_❮_ 'generate_statements' Started
+(statement:908) DEBUG:@generate_statements:<bll.statement.StatementManager object at 0x7f8f1bd24b20>
+(statement:937) DEBUG:@generate_statements:matching queue 861
+(log:75) DEBUG:@wrap:🌵  ❮_❮_❮_❮_ 'get_status' Started
+(datamanager:360) DEBUG:@get_status:get_status for 861
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯ 🌵   'get_status' Ended 🐘  tot. mem.: 307 MB  𝞓: 0 MB ⏱  0.003s
+(datamanager:170) DEBUG:@_set_queue_status:_set_queue_status: Queue_id : 861, Status : IN_PROGRESS, None
+(datamanager:183) DEBUG:@_set_queue_status:SQL : update UserStatementsQueue set status=2100,LastUpdateDate=getdate() where UserStatementQueueId=861
+(datamanager:543) DEBUG:@rerun_batch:rerun_batch
+(log:75) DEBUG:@wrap:🌽  ❮_❮_❮_❮_ 'match_statements' Started
+(statement:662) DEBUG:@match_statements:>> match_statements: 861
+(statement:672) DEBUG:@match_statements:matching queue 861
+(log:75) DEBUG:@wrap:🌾  ❮_❮_❮_❮_❮_ 'set_queue_id' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯ 🌾   'set_queue_id' Ended 🐘  tot. mem.: 307 MB  𝞓: 0 MB ⏱  0.000s
+(datamanager:1013) DEBUG:@get_statement_info:get_statement_info: 861
+(log:75) DEBUG:@wrap:🌶  ❮_❮_❮_❮_❮_ 'get_calculated_payees' Started
+(billing:45) DEBUG:@get_calculated_payees:>>>get_calculated_payees: 861, 132168
+(log:75) DEBUG:@wrap:🍃  ❮_❮_❮_❮_❮_❮_ 'get_sales_contracts' Started
+(contract:715) DEBUG:@get_sales_contracts:>>>> get_sales_contracts: 861, 132168
+(log:75) DEBUG:@wrap:🌸  ❮_❮_❮_❮_❮_❮_❮_ 'get_track_release_sales' Started
+(catalog:38) DEBUG:@get_track_release_sales:get_track_release_sales: 861
+(log:75) DEBUG:@wrap:🌽  ❮_❮_❮_❮_❮_❮_❮_❮_ 'get_sale_items' Started
+(datamanager:295) DEBUG:@get_sale_items:get_sale_items: 861
+(log:75) DEBUG:@wrap:🌾  ❮_❮_❮_❮_❮_❮_❮_❮_❮_ '_store_rows' Started
+(datamanager:88) DEBUG:@_store_rows:_store_rows: /home/revelator/statement-engine/log/cache/matcher/sale_items_all_approved_861.csv
+(datamanager:119) DEBUG:@_store_rows:retrieved 10000
+(datamanager:119) DEBUG:@_store_rows:retrieved 20000
+(datamanager:119) DEBUG:@_store_rows:retrieved 30000
+(datamanager:119) DEBUG:@_store_rows:retrieved 40000
+(datamanager:119) DEBUG:@_store_rows:retrieved 50000
+(datamanager:119) DEBUG:@_store_rows:retrieved 60000
+(datamanager:119) DEBUG:@_store_rows:retrieved 70000
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯_❯_❯_❯ 🌾   '_store_rows' Ended 🐘  tot. mem.: 307 MB  𝞓: 0 MB ⏱  1.263s
+(datamanager:327) DEBUG:@get_sale_items:table output: []
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯_❯_❯ 🌽   'get_sale_items' Ended 🐘  tot. mem.: 307 MB  𝞓: 0 MB ⏱  2.138s
+(log:75) DEBUG:@wrap:🍉  ❮_❮_❮_❮_❮_❮_❮_❮_ 'get_releases' Started
+(datamanager:741) DEBUG:@get_releases:get_releases
+(log:75) DEBUG:@wrap:🍊  ❮_❮_❮_❮_❮_❮_❮_❮_❮_ '_load_json' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯_❯_❯_❯ 🍊   '_load_json' Ended 🐘  tot. mem.: 584 MB  𝞓: 277 MB ⏱  2.530s
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯_❯_❯ 🍉   'get_releases' Ended 🐘  tot. mem.: 584 MB  𝞓: 277 MB ⏱  2.532s
+(log:75) DEBUG:@wrap:🌹  ❮_❮_❮_❮_❮_❮_❮_❮_ 'inner_join' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯_❯_❯ 🌹   'inner_join' Ended 🐘  tot. mem.: 585 MB  𝞓: 1 MB ⏱  0.075s
+(catalog:88) DEBUG:@get_track_release_sales:loaded approved split sale items
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯_❯ 🌸   'get_track_release_sales' Ended 🐘  tot. mem.: 307 MB  𝞓: 0 MB ⏱  4.826s
+(log:75) DEBUG:@wrap:🍈  ❮_❮_❮_❮_❮_❮_❮_ 'get_contracts' Started
+(datamanager:677) DEBUG:@get_contracts:get_contracts
+(log:75) DEBUG:@wrap:🍉  ❮_❮_❮_❮_❮_❮_❮_❮_ '_load_json' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯_❯_❯ 🍉   '_load_json' Ended 🐘  tot. mem.: 310 MB  𝞓: 3 MB ⏱  1.956s
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯_❯ 🍈   'get_contracts' Ended 🐘  tot. mem.: 310 MB  𝞓: 3 MB ⏱  1.956s
+(log:75) DEBUG:@wrap:🌸  ❮_❮_❮_❮_❮_❮_❮_ 'get_track_contracts' Started
+(datamanager:717) DEBUG:@get_track_contracts:get_track_contracts
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯_❯ 🌸   'get_track_contracts' Ended 🐘  tot. mem.: 310 MB  𝞓: 0 MB ⏱  0.034s
+(log:75) DEBUG:@wrap:🍀  ❮_❮_❮_❮_❮_❮_❮_ 'get_release_contracts' Started
+(datamanager:729) DEBUG:@get_release_contracts:get_release_contracts
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯_❯ 🍀   'get_release_contracts' Ended 🐘  tot. mem.: 310 MB  𝞓: 0 MB ⏱  0.013s
+(datamanager:820) DEBUG:@get_licensor_contracts:get_licensor_contracts
+(contract:733) DEBUG:@get_sales_contracts:>> get track statements contracts
+(log:75) DEBUG:@wrap:🍈  ❮_❮_❮_❮_❮_❮_❮_ '_set_contracts_by_level' Started
+(contract:60) DEBUG:@_set_contracts_by_level:_set_contracts_by_level on TrackId
+(log:75) DEBUG:@wrap:🍅  ❮_❮_❮_❮_❮_❮_❮_❮_ 'left_join' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯_❯_❯ 🍅   'left_join' Ended 🐘  tot. mem.: 310 MB  𝞓: 0 MB ⏱  0.123s
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯_❯ 🍈   '_set_contracts_by_level' Ended 🐘  tot. mem.: 310 MB  𝞓: 0 MB ⏱  0.158s
+(log:75) DEBUG:@wrap:🍈  ❮_❮_❮_❮_❮_❮_❮_ '_set_contracts_by_level' Started
+(contract:60) DEBUG:@_set_contracts_by_level:_set_contracts_by_level on ReleaseId
+(log:75) DEBUG:@wrap:🍅  ❮_❮_❮_❮_❮_❮_❮_❮_ 'left_join' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯_❯_❯ 🍅   'left_join' Ended 🐘  tot. mem.: 305 MB  𝞓: 0 MB ⏱  0.107s
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯_❯ 🍈   '_set_contracts_by_level' Ended 🐘  tot. mem.: 305 MB  𝞓: 0 MB ⏱  0.132s
+(log:75) DEBUG:@wrap:🍈  ❮_❮_❮_❮_❮_❮_❮_ '_set_contracts_by_level' Started
+(contract:60) DEBUG:@_set_contracts_by_level:_set_contracts_by_level on ArtistId
+(log:75) DEBUG:@wrap:🍅  ❮_❮_❮_❮_❮_❮_❮_❮_ 'left_join' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯_❯_❯ 🍅   'left_join' Ended 🐘  tot. mem.: 305 MB  𝞓: 0 MB ⏱  0.035s
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯_❯ 🍈   '_set_contracts_by_level' Ended 🐘  tot. mem.: 305 MB  𝞓: 0 MB ⏱  0.044s
+(log:75) DEBUG:@wrap:🍈  ❮_❮_❮_❮_❮_❮_❮_ '_set_contracts_by_level' Started
+(contract:60) DEBUG:@_set_contracts_by_level:_set_contracts_by_level on LabelId
+(log:75) DEBUG:@wrap:🍅  ❮_❮_❮_❮_❮_❮_❮_❮_ 'left_join' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯_❯_❯ 🍅   'left_join' Ended 🐘  tot. mem.: 305 MB  𝞓: 0 MB ⏱  0.013s
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯_❯ 🍈   '_set_contracts_by_level' Ended 🐘  tot. mem.: 305 MB  𝞓: 0 MB ⏱  0.017s
+(log:75) DEBUG:@wrap:🍈  ❮_❮_❮_❮_❮_❮_❮_ '_set_contracts_by_level' Started
+(contract:60) DEBUG:@_set_contracts_by_level:_set_contracts_by_level on EnterpriseId
+(log:75) DEBUG:@wrap:🍅  ❮_❮_❮_❮_❮_❮_❮_❮_ 'left_join' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯_❯_❯ 🍅   'left_join' Ended 🐘  tot. mem.: 305 MB  𝞓: 0 MB ⏱  0.012s
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯_❯ 🍈   '_set_contracts_by_level' Ended 🐘  tot. mem.: 305 MB  𝞓: 0 MB ⏱  0.017s
+(contract:807) DEBUG:@get_sales_contracts:>> get release statements contracts
+(log:75) DEBUG:@wrap:🍈  ❮_❮_❮_❮_❮_❮_❮_ '_set_contracts_by_level' Started
+(contract:60) DEBUG:@_set_contracts_by_level:_set_contracts_by_level on ReleaseId
+(log:75) DEBUG:@wrap:🍅  ❮_❮_❮_❮_❮_❮_❮_❮_ 'left_join' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯_❯_❯ 🍅   'left_join' Ended 🐘  tot. mem.: 236 MB  𝞓: 0 MB ⏱  0.012s
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯_❯ 🍈   '_set_contracts_by_level' Ended 🐘  tot. mem.: 236 MB  𝞓: 0 MB ⏱  0.017s
+(log:75) DEBUG:@wrap:🍈  ❮_❮_❮_❮_❮_❮_❮_ '_set_contracts_by_level' Started
+(contract:60) DEBUG:@_set_contracts_by_level:_set_contracts_by_level on ArtistId
+(log:75) DEBUG:@wrap:🍅  ❮_❮_❮_❮_❮_❮_❮_❮_ 'left_join' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯_❯_❯ 🍅   'left_join' Ended 🐘  tot. mem.: 235 MB  𝞓: 0 MB ⏱  0.012s
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯_❯ 🍈   '_set_contracts_by_level' Ended 🐘  tot. mem.: 235 MB  𝞓: 0 MB ⏱  0.016s
+(log:75) DEBUG:@wrap:🍈  ❮_❮_❮_❮_❮_❮_❮_ '_set_contracts_by_level' Started
+(contract:60) DEBUG:@_set_contracts_by_level:_set_contracts_by_level on LabelId
+(log:75) DEBUG:@wrap:🍅  ❮_❮_❮_❮_❮_❮_❮_❮_ 'left_join' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯_❯_❯ 🍅   'left_join' Ended 🐘  tot. mem.: 235 MB  𝞓: 0 MB ⏱  0.013s
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯_❯ 🍈   '_set_contracts_by_level' Ended 🐘  tot. mem.: 235 MB  𝞓: 0 MB ⏱  0.017s
+(log:75) DEBUG:@wrap:🍈  ❮_❮_❮_❮_❮_❮_❮_ '_set_contracts_by_level' Started
+(contract:60) DEBUG:@_set_contracts_by_level:_set_contracts_by_level on EnterpriseId
+(log:75) DEBUG:@wrap:🍅  ❮_❮_❮_❮_❮_❮_❮_❮_ 'left_join' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯_❯_❯ 🍅   'left_join' Ended 🐘  tot. mem.: 235 MB  𝞓: 0 MB ⏱  0.013s
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯_❯ 🍈   '_set_contracts_by_level' Ended 🐘  tot. mem.: 235 MB  𝞓: 0 MB ⏱  0.017s
+(contract:871) DEBUG:@get_sales_contracts:>> loaded approved sale active contracts
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯ 🍃   'get_sales_contracts' Ended 🐘  tot. mem.: 234 MB  𝞓: -73 MB ⏱  7.480s
+(log:75) DEBUG:@wrap:🍇  ❮_❮_❮_❮_❮_❮_ 'get_sales_contracts_terms' Started
+(contract:555) DEBUG:@get_sales_contracts_terms:>>>get_sales_contracts_terms: 132168
+(datamanager:776) DEBUG:@get_contract_terms:get_contract_terms
+(log:75) DEBUG:@wrap:🍄  ❮_❮_❮_❮_❮_❮_❮_ 'get_sales_contracts_terms_by_delivery_types' Started
+(datamanager:831) DEBUG:@get_contract_delivery_types:get_contract_delivery_types
+(log:75) DEBUG:@wrap:🌹  ❮_❮_❮_❮_❮_❮_❮_❮_ 'inner_join' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯_❯_❯ 🌹   'inner_join' Ended 🐘  tot. mem.: 240 MB  𝞓: 0 MB ⏱  0.089s
+(log:75) DEBUG:@wrap:🍁  ❮_❮_❮_❮_❮_❮_❮_❮_ 'inner_join_w_errors' Started
+(log:75) DEBUG:@wrap:🌺  ❮_❮_❮_❮_❮_❮_❮_❮_❮_ 'inner_join_w_missing' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯_❯_❯_❯ 🌺   'inner_join_w_missing' Ended 🐘  tot. mem.: 241 MB  𝞓: 1 MB ⏱  0.014s
+(log:75) DEBUG:@wrap:🍆  ❮_❮_❮_❮_❮_❮_❮_❮_❮_ 'left_join' Started
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯_❯_❯_❯ 🍆   'left_join' Ended 🐘  tot. mem.: 241 MB  𝞓: 0 MB ⏱  0.014s
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯_❯_❯ 🍁   'inner_join_w_errors' Ended 🐘  tot. mem.: 241 MB  𝞓: 1 MB ⏱  0.030s
+(notification:35) DEBUG:@error:queue_id :861
+(log:75) DEBUG:@wrap:🌹  ❮_❮_❮_❮_❮_❮_❮_❮_ 'get_status' Started
+(datamanager:360) DEBUG:@get_status:get_status for 861
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯_❯_❯ 🌹   'get_status' Ended 🐘  tot. mem.: 241 MB  𝞓: 0 MB ⏱  0.001s
+(datamanager:425) DEBUG:@generate_only_empty_statements:generate_only_empty_statements: 861 2100==2102
+(datamanager:446) ERROR:@set_system_error:('23000', '[23000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The INSERT statement conflicted with the FOREIGN KEY constraint "FK_SaleItemsMatchingErrors_ErrorTypeId". The conflict occurred in database "db-rev-prod", table "dbo.MatchingErrorTypes", column \'ErrorTypeId\'. (547) (SQLExecDirectW)')
+(datamanager:170) DEBUG:@_set_queue_status:_set_queue_status: Queue_id : 861, Status : FAILURE, Traceback (most recent call last):
+  File "/mnt/data/revelator/statement-engine/bll/statement.py", line 682, in match_statements
+    (calculated_payees, sales_track_mechanics,) = billing_manager.get_calculated_payees(queue_id, payor_id)
+  File "/mnt/data/revelator/statement-engine/utils/log.py", line 76, in wrap
+    value = func(*args, **kwargs)
+  File "/mnt/data/revelator/statement-engine/bll/billing.py", line 49, in get_calculated_payees
+    sales_contracts_terms = self._contract_manager.get_sales_contracts_terms(sales_contracts, payor_id)
+  File "/mnt/data/revelator/statement-engine/utils/log.py", line 76, in wrap
+    value = func(*args, **kwargs)
+  File "/mnt/data/revelator/statement-engine/bll/contract.py", line 564, in get_sales_contracts_terms
+    ) = self.get_sales_contracts_terms_by_delivery_types(sales_contracts, payor_id, process, contract_terms)
+  File "/mnt/data/revelator/statement-engine/utils/log.py", line 76, in wrap
+    value = func(*args, **kwargs)
+  File "/mnt/data/revelator/statement-engine/bll/contract.py", line 174, in get_sales_contracts_terms_by_delivery_types
+    self._notifier.error(missing_terms_sales_df, MatchError.MISSING_DELIVERY_TERMS)
+  File "/mnt/data/revelator/statement-engine/bll/notification.py", line 36, in error
+    self._data_manager.set_error_sales(self._queue_id, siaa_df, error, description)
+  File "/mnt/data/revelator/statement-engine/dal/datamanager.py", line 537, in set_error_sales
+    self._cursor.execute(sql)
+pyodbc.IntegrityError: ('23000', '[23000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The INSERT statement conflicted with the FOREIGN KEY constraint "FK_SaleItemsMatchingErrors_ErrorTypeId". The conflict occurred in database "db-rev-prod", table "dbo.MatchingErrorTypes", column \'ErrorTypeId\'. (547) (SQLExecDirectW)')
+
+(datamanager:183) DEBUG:@_set_queue_status:SQL : update UserStatementsQueue set status=2111,LastUpdateDate=getdate(),ErrorMessage='Traceback (most recent call last):
+  File "/mnt/data/revelator/statement-engine/bll/statement.py", line 682, in match_statements
+    (calculated_payees, sales_track_mechanics,) = billing_manager.get_calculated_payees(queue_id, payor_id)
+  File "/mnt/data/revelator/statement-engine/utils/log.py", line 76, in wrap
+    value = func(*args, **kwargs)
+  File "/mnt/data/revelator/statement-engine/bll/billing.py", line 49, in get_calculated_payees
+    sales_contracts_terms = self._contract_manager.get_sales_contracts_terms(sales_contracts, payor_id)
+  File "/mnt/data/revelator/statement-engine/utils/log.py", line 76, in wrap
+    value = func(*args, **kwargs)
+  File "/mnt/data/revelator/statement-engine/bll/contract.py", line 564, in get_sales_contracts_terms
+    ) = self.get_sales_contracts_terms_by_delivery_types(sales_contracts, payor_id, process, contract_terms)
+  File "/mnt/data/revelator/statement-engine/utils/log.py", line 76, in wrap
+    value = func(*args, **kwargs)
+  File "/mnt/data/revelator/statement-engine/bll/contract.py", line 174, in get_sales_contracts_terms_by_delivery_types
+    self._notifier.error(missing_terms_sales_df, MatchError.MISSING_DELIVERY_TERMS)
+  File "/mnt/data/revelator/statement-engine/bll/notification.py", line 36, in error
+    self._data_manager.set_error_sales(self._queue_id, siaa_df, error, description)
+  File "/mnt/data/revelator/statement-engine/dal/datamanager.py", line 537, in set_error_sales
+    self._cursor.execute(sql)
+pyodbc.IntegrityError: ( 23000 ,  [23000] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The INSERT statement conflicted with the FOREIGN KEY constraint "FK_SaleItemsMatchingErrors_ErrorTypeId". The conflict occurred in database "db-rev-prod", table "dbo.MatchingErrorTypes", column \ ErrorTypeId\ . (547) (SQLExecDirectW) )
+'where UserStatementQueueId=861
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯_❯ 🌽   'match_statements' Ended 🐘  tot. mem.: 233 MB  𝞓: -74 MB ⏱  8.015s
+(log:75) DEBUG:@wrap:🌸  ❮_❮_❮_❮_❮_❮_❮_ 'get_status' Started
+(datamanager:360) DEBUG:@get_status:get_status for 861
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯_❯ 🌸   'get_status' Ended 🐘  tot. mem.: 233 MB  𝞓: 0 MB ⏱  0.004s
+(datamanager:425) DEBUG:@generate_only_empty_statements:generate_only_empty_statements: 861 2111==2102
+(datamanager:446) ERROR:@set_system_error:cannot unpack non-iterable NoneType object
+(datamanager:170) DEBUG:@_set_queue_status:_set_queue_status: Queue_id : 861, Status : FAILURE, Traceback (most recent call last):
+  File "/mnt/data/revelator/statement-engine/bll/statement.py", line 945, in generate_statements
+    (statements, mechanics_statements, statement_info, balances, calculated_payees,) = self.match_statements(
+TypeError: cannot unpack non-iterable NoneType object
+
+(datamanager:183) DEBUG:@_set_queue_status:SQL : update UserStatementsQueue set status=2111,LastUpdateDate=getdate(),ErrorMessage='Traceback (most recent call last):
+  File "/mnt/data/revelator/statement-engine/bll/statement.py", line 945, in generate_statements
+    (statements, mechanics_statements, statement_info, balances, calculated_payees,) = self.match_statements(
+TypeError: cannot unpack non-iterable NoneType object
+'where UserStatementQueueId=861
+(log:82) DEBUG:@wrap:_❯_❯_❯_❯_❯_❯ 🍄   'generate_statements' Ended 🐘  tot. mem.: 233 MB  𝞓: -74 MB ⏱  8.119s
